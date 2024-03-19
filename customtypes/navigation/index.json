@@ -1,0 +1,35 @@
+{
+	"format": "custom",
+	"id": "navigation",
+	"label": "navigation",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {
+			"nav_item": {
+				"type": "Group",
+				"config": {
+					"label": "Nav Item",
+					"repeat": true,
+					"fields": {
+						"link_label": {
+							"type": "Text",
+							"config": {
+								"label": "Link Label",
+								"placeholder": ""
+							}
+						},
+						"link_url": {
+							"type": "Link",
+							"config": {
+								"label": "Link_Url",
+								"placeholder": "",
+								"select": null
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

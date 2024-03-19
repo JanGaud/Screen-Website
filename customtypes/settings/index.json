@@ -1,0 +1,54 @@
+{
+	"format": "custom",
+	"id": "settings",
+	"label": "settings",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {
+			"square_logo": {
+				"type": "Image",
+				"config": {
+					"label": "Square Logo",
+					"constraint": {},
+					"thumbnails": []
+				}
+			},
+			"rectangle_logo": {
+				"type": "Image",
+				"config": {
+					"label": "Rectangle Logo",
+					"constraint": {},
+					"thumbnails": []
+				}
+			},
+			"company_name": {
+				"type": "Text",
+				"config": {
+					"label": "Company Name",
+					"placeholder": ""
+				}
+			},
+			"company_phone": {
+				"type": "Text",
+				"config": {
+					"label": "Company Phone",
+					"placeholder": ""
+				}
+			},
+			"company_email": {
+				"type": "Text",
+				"config": {
+					"label": "Company Email",
+					"placeholder": ""
+				}
+			},
+			"company_location": {
+				"type": "GeoPoint",
+				"config": {
+					"label": "Company Location"
+				}
+			}
+		}
+	}
+}
