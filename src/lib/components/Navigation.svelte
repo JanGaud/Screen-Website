@@ -31,25 +31,25 @@
     }
 </script>
 
-<header class="w-full h-20 fixed bg-white dark:bg-davys_gray top-0 z-10">
-    <nav class="flex items-center justify-between px-4 py-1 border-b border-saffron shadow-md">
+<header class="w-full h-20 fixed bg-white bg-white-backdrop dark:bg-steel-blue-backdrop top-0 z-10">
+    <nav class="flex items-center justify-between gap-4 px-10 py-1 border-b border-saffron shadow-md">
         <div class="flex-grow w-1/3">
             <ul class="flex items-center space-x-4 uppercase text-sm text-saffron">
                 {#each navItems as { link_label, link_url }}
                     <li class="flex items-center gap-3">
-                        <PrismicLink field={link_url} class="hover:text-gray-600 dark:hover:text-gray-300 drop-shadow-md transition-colors cursor-pointer">{link_label}</PrismicLink><span>/</span>
+                        <PrismicLink field={link_url} class="hover:text-gray-600 dark:hover:text-gray-300 drop-shadow-md transition-colors whitespace-nowrap cursor-pointer">{link_label}</PrismicLink><span>/</span>
                     </li>
                 {/each}
             </ul>
         </div>
 
-        <div class="flex justify-center items-center flex-grow w-1/3">
+        <div class="flex justify-end lg:justify-center items-center flex-grow w-1/3">
             <div class="w-[160px] h-auto overflow-hidden">
                 <PrismicImage class="object-contain w-full h-auto drop-shadow-md" field={brandLogo} />
             </div>
         </div>
 
-        <div class="flex-grow w-1/3">
+        <div class="w-1/3 hidden lg:block flex-grow">
             <ul class="flex justify-end items-center space-x-4">
                 {#each socials as { social_link, social_icon }}
                     <li>
