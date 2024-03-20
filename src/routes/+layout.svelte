@@ -5,6 +5,7 @@
 	import { repositoryName } from '$lib/prismicio';
 	import Navigation from '$lib/components/Navigation.svelte';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
+	import MouseFxBg from '$lib/components/MouseFxBg.svelte';
 </script>
 
 <svelte:head>
@@ -26,4 +27,5 @@
 <main class="bg-white dark:bg-davys_gray min-h-screen pt-32 pb-16 px-4 lg:px-28">
 	<slot />
 </main>
+<MouseFxBg />
 <PrismicPreview {repositoryName} />

@@ -15,7 +15,7 @@
   }
 </script>
 
-<label class="fixed bottom-4 left-4">
+<label class="fixed bottom-4 left-4 z-50">
   <input class="toggle" type="checkbox" on:click={handleToggle} bind:checked={isDarkTheme}>
 </label>
 

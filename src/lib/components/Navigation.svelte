@@ -37,7 +37,7 @@
 	}
 </script>
 
-<header class="w-full h-20 fixed top-0 z-10">
+<header class="w-full h-20 fixed top-0 z-50">
 	<nav
 		class="flex items-center bg-white-backdrop dark:bg-steel-blue-backdrop justify-between gap-4 px-10 py-1 border-b border-saffron shadow-md"
 	>

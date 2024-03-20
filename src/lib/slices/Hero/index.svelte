@@ -1,8 +1,6 @@
 <script>
 	/** @type {import("@prismicio/client").Content.HeroSlice} */
 	export let slice;
-
-
 </script>
 
 <section
@@ -12,16 +10,16 @@
 >
 	<div class="flex flex-wrap">
 		{#if slice.primary.presentation && slice.primary.what_i_do}
-			<hgroup class="w-full lg:w-2/3 text-center lg:text-left">
-				<h1 class="font-extrabold text-6xl lg:text-8xl drop-shadow-lg bg-gradient-to-tl from-steel_blue via-yellow_green to-saffron bg">
+			<hgroup class="w-full lg:w-2/3 text-center lg:text-left z-20 pointer-events-none">
+				<h1
+					class="font-extrabold text-6xl lg:text-8xl drop-shadow-lg bg-gradient-to-tl from-steel_blue via-yellow_green to-saffron bg"
+				>
 					{slice.primary.presentation}
 				</h1>
 				<h2 class="text-2xl lg:text-4xl">{slice.primary.what_i_do}</h2>
 			</hgroup>
 		{/if}
-		<div class="w-full lg:w-1/3">
-
-		</div>
+		<div class="w-full lg:w-1/3"></div>
 	</div>
 </section>
 
