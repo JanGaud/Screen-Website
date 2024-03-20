@@ -28,7 +28,7 @@ body {
 
 @layer utilities {
     .bg-steel-blue-backdrop {
-        background-color: #4746477a;
+        background-color: #2e2e2e82;
         backdrop-filter: blur(20px);
     }
 }

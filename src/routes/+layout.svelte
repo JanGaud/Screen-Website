@@ -24,7 +24,7 @@
 
 <Navigation />
 <ThemeToggle />
-<main class="bg-white dark:bg-davys_gray min-h-screen pt-32 pb-16 px-4 lg:px-28">
+<main class="bg-white dark:bg-davys_gray-200 min-h-screen pt-32 pb-16 px-4 lg:px-28">
 	<slot />
 </main>
 <MouseFxBg />
