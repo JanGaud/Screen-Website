@@ -3,6 +3,15 @@
 	export let slice;
 </script>
 
-<section data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
-	Placeholder component for {slice.slice_type} (variation: {slice.variation}) Slices
+<section
+	class="dark:text-white text-davys_gray"
+	data-slice-type={slice.slice_type}
+	data-slice-variation={slice.variation}
+>
+	{#if slice.primary.presentation && slice.primary.what_i_do}
+		<hgroup>
+			<h1 class="font-extrabold text-7xl">{slice.primary.presentation}</h1>
+			<h2 class="text-4xl">{slice.primary.what_i_do}</h2>
+		</hgroup>
+	{/if}
 </section>
