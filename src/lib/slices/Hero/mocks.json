@@ -1,0 +1,19 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"presentation": {
+				"__TYPE__": "FieldContent",
+				"value": "average",
+				"type": "Text"
+			},
+			"what_i_do": {
+				"__TYPE__": "FieldContent",
+				"value": "went",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

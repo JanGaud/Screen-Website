@@ -1,16 +1,22 @@
 <script>
   import { themeStore } from '../../stores/themeStore.js';
+  import { onMount } from 'svelte';
 
-  $: checked = $themeStore === 'light';
+  let isDarkTheme = false;
+
+  onMount(() => {
+    themeStore.subscribe((value) => {
+      isDarkTheme = value === 'light';
+    });
+  });
 
   function handleToggle() {
     themeStore.toggle();
   }
 </script>
 
-
 <label class="fixed bottom-4 left-4">
-  <input class="toggle" type="checkbox" bind:checked={checked} on:click={handleToggle}>
+  <input class="toggle" type="checkbox" on:click={handleToggle} bind:checked={isDarkTheme}>
 </label>
 
 <style>

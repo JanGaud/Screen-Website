@@ -60,7 +60,7 @@ export type NavigationDocument<Lang extends string = string> = prismic.PrismicDo
 	Lang
 >;
 
-type PageDocumentDataSlicesSlice = RichTextSlice;
+type PageDocumentDataSlicesSlice = HeroSlice;
 
 /**
  * Content for Page documents
@@ -296,46 +296,56 @@ export type AllDocumentTypes =
 	| SocialsDocument;
 
 /**
- * Primary content in *RichText → Primary*
+ * Primary content in *Hero → Primary*
  */
-export interface RichTextSliceDefaultPrimary {
+export interface HeroSliceDefaultPrimary {
 	/**
-	 * Content field in *RichText → Primary*
+	 * Presentation field in *Hero → Primary*
 	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: Lorem ipsum...
-	 * - **API ID Path**: rich_text.primary.content
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.primary.presentation
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
-	content: prismic.RichTextField;
+	presentation: prismic.KeyTextField;
+
+	/**
+	 * What I Do field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.primary.what_i_do
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	what_i_do: prismic.KeyTextField;
 }
 
 /**
- * Default variation for RichText Slice
+ * Default variation for Hero Slice
  *
  * - **API ID**: `default`
- * - **Description**: RichText
+ * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type RichTextSliceDefault = prismic.SharedSliceVariation<
+export type HeroSliceDefault = prismic.SharedSliceVariation<
 	'default',
-	Simplify<RichTextSliceDefaultPrimary>,
+	Simplify<HeroSliceDefaultPrimary>,
 	never
 >;
 
 /**
- * Slice variation for *RichText*
+ * Slice variation for *Hero*
  */
-type RichTextSliceVariation = RichTextSliceDefault;
+type HeroSliceVariation = HeroSliceDefault;
 
 /**
- * RichText Shared Slice
+ * Hero Shared Slice
  *
- * - **API ID**: `rich_text`
- * - **Description**: RichText
+ * - **API ID**: `hero`
+ * - **Description**: Hero
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type RichTextSlice = prismic.SharedSlice<'rich_text', RichTextSliceVariation>;
+export type HeroSlice = prismic.SharedSlice<'hero', HeroSliceVariation>;
 
 declare module '@prismicio/client' {
 	interface CreateClient {
@@ -359,10 +369,10 @@ declare module '@prismicio/client' {
 			SocialsDocumentData,
 			SocialsDocumentDataSocialMedialItem,
 			AllDocumentTypes,
-			RichTextSlice,
-			RichTextSliceDefaultPrimary,
-			RichTextSliceVariation,
-			RichTextSliceDefault
+			HeroSlice,
+			HeroSliceDefaultPrimary,
+			HeroSliceVariation,
+			HeroSliceDefault
 		};
 	}
 }
