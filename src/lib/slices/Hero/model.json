@@ -25,6 +25,14 @@
             "label": "What I Do",
             "placeholder": ""
           }
+        },
+        "text_texture_img": {
+          "type": "Image",
+          "config": {
+            "label": "Text Texture Img",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {}

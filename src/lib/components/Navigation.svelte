@@ -31,8 +31,8 @@
     }
 </script>
 
-<header class="w-full h-20 fixed bg-white bg-white-backdrop dark:bg-steel-blue-backdrop top-0 z-10">
-    <nav class="flex items-center justify-between gap-4 px-10 py-1 border-b border-saffron shadow-md">
+<header class="w-full h-20 fixed top-0 z-10">
+    <nav class="flex items-center bg-white-backdrop dark:bg-steel-blue-backdrop justify-between gap-4 px-10 py-1 border-b border-saffron shadow-md">
         <div class="hidden md:block flex-grow w-1/3">
             <ul class="flex items-center space-x-4 uppercase text-sm text-saffron">
                 {#each navItems as { link_label, link_url }}

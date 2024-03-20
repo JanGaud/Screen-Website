@@ -318,6 +318,16 @@ export interface HeroSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	what_i_do: prismic.KeyTextField;
+
+	/**
+	 * Text Texture Img field in *Hero → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: hero.primary.text_texture_img
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	text_texture_img: prismic.ImageField<never>;
 }
 
 /**

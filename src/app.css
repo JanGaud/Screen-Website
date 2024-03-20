@@ -21,14 +21,14 @@ body {
 
 @layer utilities {
     .bg-white-backdrop {
-        background-color: rgba(255, 255, 255, 0.277);
-        backdrop-filter: blur(15px);
+        background-color: rgba(255, 255, 255, 0.503);
+        backdrop-filter: blur(20px);
     }
 }
 
 @layer utilities {
     .bg-steel-blue-backdrop {
-        background-color: #4746475d;
-        backdrop-filter: blur(15px);
+        background-color: #4746477a;
+        backdrop-filter: blur(20px);
     }
 }
