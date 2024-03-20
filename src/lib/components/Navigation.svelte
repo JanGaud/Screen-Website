@@ -97,6 +97,7 @@
 					{#each navItems as { link_label, link_url }}
 						<li class="mb-2">
 							<PrismicLink
+								on:click={toggleMobileMenu}
 								field={link_url}
 								class="hover:text-gray-600 dark:hover:text-gray-300 drop-shadow-lg transition-colors whitespace-nowrap cursor-pointer"
 								>{link_label}</PrismicLink
