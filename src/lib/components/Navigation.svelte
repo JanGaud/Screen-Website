@@ -1,43 +1,63 @@
 <script>
-	import { page } from '$app/stores';
-	import { PrismicImage, PrismicLink } from '@prismicio/svelte';
-	import Icon from '@iconify/svelte';
+    // Import required Svelte stores
+    import { page } from '$app/stores';
+    import { PrismicImage, PrismicLink } from '@prismicio/svelte';
+    import Icon from '@iconify/svelte';
+    import { onMount } from 'svelte';
 
-	const navItems = $page.data.nav.data.nav_item;
-	const socials = $page.data.social.data.social_medial;
-	const brandLogo = $page.data.settings.data.rectangle_logo;
+    // Define variables
+    const navItems = $page.data.nav.data.nav_item;
+    const socials = $page.data.social.data.social_medial;
+    const brandLogo = $page.data.settings.data.rectangle_logo;
 
-	const iconMap = {
-		facebook: 'ic:baseline-facebook',
-		x: 'ri:twitter-x-line',
-		instagram: 'mdi:instagram',
-		youtube: 'bi:youtube',
-		tiktok: 'ic:baseline-tiktok',
-		linkedin: 'mdi:linkedin',
-		github: 'ri:github-fill'
-	};
+    const iconMap = {
+        facebook: 'ic:baseline-facebook',
+        x: 'ri:twitter-x-line',
+        instagram: 'mdi:instagram',
+        youtube: 'bi:youtube',
+        tiktok: 'ic:baseline-tiktok',
+        linkedin: 'mdi:linkedin',
+        github: 'ri:github-fill'
+    };
 
-	let isMobileMenuOpen = false;
+    let isMobileMenuOpen = false;
+    let isHeaderHidden = false;
 
-	/**
-	 * @param {string} name
-	 */
-	function getSocialIcon(name) {
-		if (typeof name === 'string') {
-			const iconName = name.toLowerCase();
-			// @ts-ignore
-			return iconMap[iconName] || 'mdi:alert-circle';
-		} else {
-			return 'mdi:alert-circle';
-		}
-	}
+    // Function to get the appropriate social media icon
+    /**
+     * @param {string} name
+     */
+    function getSocialIcon(name) {
+        if (typeof name === 'string') {
+            const iconName = name.toLowerCase();
+            // @ts-ignore
+            return iconMap[iconName] || 'mdi:alert-circle';
+        } else {
+            return 'mdi:alert-circle';
+        }
+    }
 
-	function toggleMobileMenu() {
-		isMobileMenuOpen = !isMobileMenuOpen;
-	}
+    function toggleMobileMenu() {
+        isMobileMenuOpen = !isMobileMenuOpen;
+        if (isMobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }
+
+    onMount(() => {
+        window.addEventListener('scroll', handleScroll);
+    });
+
+    function handleScroll() {
+        isHeaderHidden = window.scrollY > 20;
+    }
 </script>
-
-<header class="w-full h-20 fixed top-0 z-50">
+<header
+	class="w-full h-20 fixed top-0 z-50 transition-transform duration-300"
+	class:scroll-up={isHeaderHidden}
+>
 	<nav
 		class="flex items-center bg-white-backdrop dark:bg-steel-blue-backdrop justify-between gap-4 px-10 py-1 border-b border-saffron shadow-md"
 	>
@@ -90,7 +110,7 @@
 
 	{#if isMobileMenuOpen}
 		<div
-			class="md:hidden h-screen bg-white-backdrop dark:bg-steel-blue-backdrop dark:text-white text-davys_gray"
+			class="md:hidden z-40 h-screen bg-white-backdrop dark:bg-steel-blue-backdrop dark:text-white text-davys_gray"
 		>
 			<div class="h-full flex flex-col items-center justify-around text-2xl uppercase">
 				<ul class="w-full mx-auto flex flex-col items-center gap-4 px-4">
@@ -134,3 +154,9 @@
 		</li>
 	{/each}
 </ul>
+
+<style>
+	.scroll-up {
+		transform: translateY(-110%);
+	}
+</style>

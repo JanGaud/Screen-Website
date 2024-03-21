@@ -1,6 +1,9 @@
 <script>
+	import { gsap } from 'gsap';
+	import SplitType from 'split-type';
 	/** @type {import("@prismicio/client").Content.HeroSlice} */
 	export let slice;
+
 </script>
 
 <section
@@ -8,7 +11,7 @@
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >
-	<div class="flex flex-wrap">
+	<div class="flex flex-wrap h-screen">
 		{#if slice.primary.presentation && slice.primary.what_i_do}
 			<hgroup class="w-full lg:w-2/3 text-center lg:text-left z-20 pointer-events-none">
 				<h1
