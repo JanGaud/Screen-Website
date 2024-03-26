@@ -21,21 +21,23 @@ export default function initializeMouseFx() {
         BACK_COLOR: { r: 0, g: 0, b: 0 },
         TRANSPARENT: true,
         SUNRAYS: true,
-        SUNRAYS_RESOLUTION: 196,
-        SUNRAYS_WEIGHT: 1.0,
+        SUNRAYS_RESOLUTION: 200,
+        SUNRAYS_WEIGHT: 0.6,
     }
 
-    function pointerPrototype() {
-        this.id = -1;
-        this.texcoordX = 0;
-        this.texcoordY = 0;
-        this.prevTexcoordX = 0;
-        this.prevTexcoordY = 0;
-        this.deltaX = 0;
-        this.deltaY = 0;
-        this.down = false;
-        this.moved = false;
-        this.color = [30, 0, 300];
+    class pointerPrototype {
+        constructor() {
+            this.id = -1;
+            this.texcoordX = 0;
+            this.texcoordY = 0;
+            this.prevTexcoordX = 0;
+            this.prevTexcoordY = 0;
+            this.deltaX = 0;
+            this.deltaY = 0;
+            this.down = false;
+            this.moved = false;
+            this.color = [30, 0, 300];
+        }
     }
 
     var pointers = [];
@@ -138,95 +140,48 @@ export default function initializeMouseFx() {
     }
 
 
+    class Material {
+        constructor(vertexShader, fragmentShaderSource) {
+            this.vertexShader = vertexShader;
+            this.fragmentShaderSource = fragmentShaderSource;
+            this.programs = [];
+            this.activeProgram = null;
+            this.uniforms = [];
+        }
+        setKeywords(keywords) {
+            var hash = 0;
+            for (var i = 0; i < keywords.length; i++) { hash += hashCode(keywords[i]); }
 
-    function framebufferToTexture(target) {
-        gl.bindFramebuffer(gl.FRAMEBUFFER, target.fbo);
-        var length = target.width * target.height * 4;
-        var texture = new Float32Array(length);
-        gl.readPixels(0, 0, target.width, target.height, gl.RGBA, gl.FLOAT, texture);
-        return texture;
-    }
-
-    function normalizeTexture(texture, width, height) {
-        var result = new Uint8Array(texture.length);
-        var id = 0;
-        for (var i = height - 1; i >= 0; i--) {
-            for (var j = 0; j < width; j++) {
-                var nid = i * width * 4 + j * 4;
-                result[nid + 0] = clamp01(texture[id + 0]) * 255;
-                result[nid + 1] = clamp01(texture[id + 1]) * 255;
-                result[nid + 2] = clamp01(texture[id + 2]) * 255;
-                result[nid + 3] = clamp01(texture[id + 3]) * 255;
-                id += 4;
+            var program = this.programs[hash];
+            if (program == null) {
+                var fragmentShader = compileShader(gl.FRAGMENT_SHADER, this.fragmentShaderSource, keywords);
+                program = createProgram(this.vertexShader, fragmentShader);
+                this.programs[hash] = program;
             }
+
+            if (program == this.activeProgram) { return; }
+
+            this.uniforms = getUniforms(program);
+            this.activeProgram = program;
         }
-        return result;
-    }
-
-    function clamp01(input) {
-        return Math.min(Math.max(input, 0), 1);
-    }
-
-    function textureToCanvas(texture, width, height) {
-        var captureCanvas = document.createElement('canvas');
-        var ctx = captureCanvas.getContext('2d');
-        captureCanvas.width = width;
-        captureCanvas.height = height;
-
-        var imageData = ctx.createImageData(width, height);
-        imageData.data.set(texture);
-        ctx.putImageData(imageData, 0, 0);
-
-        return captureCanvas;
-    }
-
-    function downloadURI(filename, uri) {
-        var link = document.createElement('a');
-        link.download = filename;
-        link.href = uri;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
-
-    var Material = function Material(vertexShader, fragmentShaderSource) {
-        this.vertexShader = vertexShader;
-        this.fragmentShaderSource = fragmentShaderSource;
-        this.programs = [];
-        this.activeProgram = null;
-        this.uniforms = [];
-    };
-
-    Material.prototype.setKeywords = function setKeywords(keywords) {
-        var hash = 0;
-        for (var i = 0; i < keywords.length; i++) { hash += hashCode(keywords[i]); }
-
-        var program = this.programs[hash];
-        if (program == null) {
-            var fragmentShader = compileShader(gl.FRAGMENT_SHADER, this.fragmentShaderSource, keywords);
-            program = createProgram(this.vertexShader, fragmentShader);
-            this.programs[hash] = program;
+        bind() {
+            gl.useProgram(this.activeProgram);
         }
+    }
 
-        if (program == this.activeProgram) { return; }
 
-        this.uniforms = getUniforms(program);
-        this.activeProgram = program;
-    };
 
-    Material.prototype.bind = function bind() {
-        gl.useProgram(this.activeProgram);
-    };
+    class Program {
+        constructor(vertexShader, fragmentShader) {
+            this.uniforms = {};
+            this.program = createProgram(vertexShader, fragmentShader);
+            this.uniforms = getUniforms(this.program);
+        }
+        bind() {
+            gl.useProgram(this.program);
+        }
+    }
 
-    var Program = function Program(vertexShader, fragmentShader) {
-        this.uniforms = {};
-        this.program = createProgram(vertexShader, fragmentShader);
-        this.uniforms = getUniforms(this.program);
-    };
-
-    Program.prototype.bind = function bind() {
-        gl.useProgram(this.program);
-    };
 
     function createProgram(vertexShader, fragmentShader) {
         var program = gl.createProgram();
@@ -336,7 +291,7 @@ export default function initializeMouseFx() {
     var sunrays;
     var sunraysTemp;
 
-    //var ditheringTexture = createTextureAsync('LDR_LLL1_0.png');
+    var ditheringTexture = createTextureAsync('LDR_LLL1_0.png');
 
     var blurProgram = new Program(blurVertexShader, blurShader);
     var copyProgram = new Program(baseVertexShader, copyShader);
