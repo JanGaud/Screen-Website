@@ -49,6 +49,7 @@ body {
     border: none;
     outline: none;
     border-radius: 5px;
+    border: 1px solid white;
     color: #fff;
     background-color: #1b1b1b31;
     position: relative;
