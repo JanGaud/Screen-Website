@@ -41,6 +41,7 @@
 		"@prismicio/svelte": "^1.0.3",
 		"gsap": "^3.12.5",
 		"split-type": "^0.3.4",
+		"three": "^0.162.0",
 		"threejs-toys": "^0.0.8"
 	}
 }
