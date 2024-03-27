@@ -291,8 +291,6 @@ export default function initializeMouseFx() {
     var sunrays;
     var sunraysTemp;
 
-    var ditheringTexture = createTextureAsync('LDR_LLL1_0.png');
-
     var blurProgram = new Program(blurVertexShader, blurShader);
     var copyProgram = new Program(baseVertexShader, copyShader);
     var clearProgram = new Program(baseVertexShader, clearShader);
