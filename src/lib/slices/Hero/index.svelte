@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
+	import { PrismicLink } from '@prismicio/svelte';
 	/** @type {import("@prismicio/client").Content.HeroSlice} */
 	export let slice;
 	/**
@@ -47,23 +48,29 @@
 >
 	<div class="flex flex-wrap h-screen">
 		{#if slice.primary.presentation && slice.primary.what_i_do}
-			<hgroup class="w-full p-10 lg:w-2/3 text-center lg:text-left z-20 pointer-events-none">
-				<h1 bind:this={presentationRef} class="font-bold text-4xl lg:text-6xl drop-shadow-lg bg">
-					{#each slice.primary.presentation.split(' ') as word, wordIndex}
-						<span>
-							{#each word.split('') as letter}
-								<span>{letter}</span>
-							{/each}
-						</span>
-						{#if wordIndex < slice.primary.presentation.split(' ').length - 1}
-							&nbsp;
-						{/if}
-					{/each}
-				</h1>
-				<h2 bind:this={whatIDoRef} class="text-2xl lg:text-3xl">
-					{slice.primary.what_i_do}
-				</h2>
-			</hgroup>
+			<div class="w-full flex flex-col gap-4 p-10 lg:w-2/3 z-20 pointer-events-none">
+				<hgroup class="text-center lg:text-left">
+					<h1 bind:this={presentationRef} class="font-bold text-4xl lg:text-6xl drop-shadow-lg bg">
+						{#each slice.primary.presentation.split(' ') as word, wordIndex}
+							<span>
+								{#each word.split('') as letter}
+									<span>{letter}</span>
+								{/each}
+							</span>
+							{#if wordIndex < slice.primary.presentation.split(' ').length - 1}
+								&nbsp;
+							{/if}
+						{/each}
+					</h1>
+					<h2 bind:this={whatIDoRef} class="text-2xl lg:text-3xl">
+						{slice.primary.what_i_do}
+					</h2>
+				</hgroup>
+				{#if slice.primary.cta_label && slice.primary.cta_link}
+				<PrismicLink field={slice.primary.cta_link} 
+				class="z-20 w-fit pointer-events-auto cursor-pointer px-4 py-2 uppercase font-bold tracking-wider dark:bg-white dark:text-davys_gray bg-davys_gray text-white">{slice.primary.cta_label}</PrismicLink>
+				{/if}
+			</div>
 		{/if}
 		<div class="w-full lg:w-1/3 z-20 pointer-events-none"></div>
 	</div>

@@ -782,7 +782,7 @@ export default function initializeMouseFx() {
         return radius;
     }
 
-    canvas.addEventListener('mousedown', function (e) {
+    canvas.addEventListener('mouseenter', function (e) {
         var posX = scaleByPixelRatio(e.offsetX);
         var posY = scaleByPixelRatio(e.offsetY);
         var pointer = pointers.find(function (p) { return p.id == -1; });
@@ -798,7 +798,7 @@ export default function initializeMouseFx() {
         updatePointerMoveData(pointer, posX, posY);
     });
 
-    window.addEventListener('mouseup', function () {
+    window.addEventListener('mouseleave', function () {
         updatePointerUpData(pointers[0]);
     });
 
