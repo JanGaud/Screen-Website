@@ -5,17 +5,16 @@
     onMount(() => {
         initializeMouseFx();
 
-        // Set the canvas opacity to 1 after 2 seconds
         setTimeout(() => {
             const canvas = document.querySelector('canvas');
             if (canvas) {
-                canvas.style.opacity = '1'; // Change opacity to fully opaque
+                canvas.style.opacity = '1';
             }
-        }, 4000);
+        }, 3200);
     });
 </script>
 
-<canvas class="fixed top-0 w-full h-full opacity-0"></canvas> <!-- Initial opacity set to 0 -->
+<canvas class="fixed top-0 w-full h-full opacity-0"></canvas>
 
 <style>
     canvas {
