@@ -105,11 +105,11 @@
 		<div class="flex items-center justify-center md:hidden">
 			{#if isMobileMenuOpen}
 				<button on:click={toggleMobileMenu}>
-					<Icon class="w-10 h-10 text-saffron" icon="ic:round-close" />
+					<Icon class="w-10 h-10" icon="ic:round-close" />
 				</button>
 			{:else}
 				<button on:click={toggleMobileMenu}>
-					<Icon class="w-10 h-10 text-saffron" icon="ic:baseline-menu" />
+					<Icon class="w-10 h-10" icon="ic:baseline-menu" />
 				</button>
 			{/if}
 		</div>
@@ -137,7 +137,7 @@
 						<li>
 							<PrismicLink
 								field={social_link}
-								class="text-saffron hover:text-saffron dark:hover:text-gray-300 transition-colors cursor-pointer"
+								class="hover:text-saffron dark:hover:text-gray-300 transition-colors cursor-pointer"
 							>
 								<Icon class="w-8 h-8 drop-shadow-lg" icon={getSocialIcon(social_icon)} />
 							</PrismicLink>
