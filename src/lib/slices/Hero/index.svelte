@@ -48,7 +48,7 @@
 >
 	<div class="flex flex-wrap h-screen">
 		{#if slice.primary.presentation && slice.primary.what_i_do}
-			<div class="w-full flex flex-col gap-4 p-10 lg:w-2/3 z-20 pointer-events-none">
+			<div class="w-full flex flex-col gap-10 p-10 lg:w-2/3 z-20 pointer-events-none">
 				<hgroup class="text-center lg:text-left">
 					<h1 bind:this={presentationRef} class="font-bold text-4xl lg:text-6xl drop-shadow-lg bg">
 						{#each slice.primary.presentation.split(' ') as word, wordIndex}
@@ -68,7 +68,7 @@
 				</hgroup>
 				{#if slice.primary.cta_label && slice.primary.cta_link}
 				<PrismicLink field={slice.primary.cta_link} 
-				class="z-20 w-fit pointer-events-auto cursor-pointer px-4 py-2 uppercase font-bold tracking-wider dark:bg-white dark:text-davys_gray bg-davys_gray text-white">{slice.primary.cta_label}</PrismicLink>
+					class="btn-style">{slice.primary.cta_label}</PrismicLink>
 				{/if}
 			</div>
 		{/if}
