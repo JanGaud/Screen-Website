@@ -1,8 +1,8 @@
 <div>
 	<p class="flex gap-3">
-		<span>&lt;</span>
-		<span>/</span>
-		<span>&gt;</span>
+		<span class="text-steel_blue">&lt;</span>
+		<span class=" text-yellow_green">/</span>
+		<span class="text-persimmon">&gt;</span>
 	</p>
 </div>
 
