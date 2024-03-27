@@ -54,7 +54,7 @@
 {#if !isLoading}
     <Navigation />
     <ThemeToggle />
-    <main class="bg-white dark:bg-davys_gray-100 min-h-screen pt-32 pb-16 px-4 lg:px-28">
+    <main class="min-h-screen mt-32 mb-16 mx-4 lg:mx-28">
         <slot />
     </main>
     <MouseFxBg />

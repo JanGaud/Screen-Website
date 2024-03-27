@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
 	import { PrismicLink } from '@prismicio/svelte';
-	import ThreeDThunder from '$lib/components/threeD/ThreeDThunder.svelte';
+	import Spotlight from '$lib/components/decorations/Spotlight.svelte';
 	/** @type {import("@prismicio/client").Content.HeroSlice} */
 	export let slice;
 	/**
@@ -43,15 +43,16 @@
 </script>
 
 <section
-	class="dark:text-white text-davys_gray"
+	class="dark:text-white text-davys_gray relative"
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >
+<Spotlight/>
 	<div class="flex flex-wrap h-screen">
 		{#if slice.primary.presentation && slice.primary.what_i_do}
 			<div class="w-full flex flex-col justify-start gap-10 lg:p-10 lg:w-2/3 z-20 pointer-events-none">
-				<hgroup class="text-left">
-					<h1 bind:this={presentationRef} class="font-bold text-5xl lg:text-7xl drop-shadow-lg">
+				<hgroup class="text-left flex flex-col gap-4">
+					<h1 bind:this={presentationRef} class="font-bold tracking-tighter text-5xl lg:text-7xl drop-shadow-lg">
 						{#each slice.primary.presentation.split(' ') as word, wordIndex}
 							<span>
 								{#each word.split('') as letter}
@@ -63,7 +64,7 @@
 							{/if}
 						{/each}
 					</h1>
-					<h2 bind:this={whatIDoRef} class="text-2xl lg:text-3xl">
+					<h2 bind:this={whatIDoRef} class="text-2xl lg:text-3xl  tracking-tighter">
 						{slice.primary.what_i_do}
 					</h2>
 				</hgroup>
@@ -73,13 +74,13 @@
 				{/if}
 			</div>
 		{/if}
-		<div class="w-full lg:w-1/3 z-20 pointer-events-none"><ThreeDThunder/></div>
+		<div class="w-full lg:w-1/3 z-20 pointer-events-none">
+		</div>
 	</div>
 </section>
 
 <style>
 	span {
 		display: inline-block;
-		-webkit-text-fill-color: initial;
 	}
 </style>

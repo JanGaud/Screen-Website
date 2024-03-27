@@ -11,13 +11,13 @@
     const brandLogo = $page.data.settings.data.rectangle_logo;
 
     const iconMap = {
-        facebook: 'ic:baseline-facebook',
-        x: 'ri:twitter-x-line',
-        instagram: 'mdi:instagram',
-        youtube: 'bi:youtube',
-        tiktok: 'ic:baseline-tiktok',
-        linkedin: 'mdi:linkedin',
-        github: 'ri:github-fill'
+        facebook: 'circum:facebook',
+        x: 'circum:twitter-x-line',
+        instagram: 'circum:instagram',
+        youtube: 'circum:youtube',
+        tiktok: 'circum:baseline-tiktok',
+        linkedin: 'circum:linkedin',
+        github: 'ph:github-logo'
     };
 
     let isMobileMenuOpen = false;
@@ -80,9 +80,9 @@
         </div>
 
         <div class="flex md:justify-end lg:justify-center items-center flex-grow w-1/3">
-            <div class="w-[200px] md:w-[160px] h-auto overflow-hidden">
+            <a href="/" class="w-[200px] md:w-[160px] h-auto overflow-hidden">
                 <PrismicImage class="object-contain w-full h-auto drop-shadow-lg" field={brandLogo} />
-            </div>
+			</a>
         </div>
 
         <div class="hidden lg:flex flex-grow w-1/3 justify-end">
