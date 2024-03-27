@@ -119,14 +119,14 @@
 		<div
 			class="md:hidden z-40 h-screen bg-white-backdrop dark:bg-steel-blue-backdrop dark:text-white text-davys_gray"
 		>
-			<div class="h-full flex flex-col items-center justify-around text-2xl uppercase">
+			<div class="h-full flex flex-col items-center justify-around text-2xl uppercase font-bold tracking-wider">
 				<ul class="w-full mx-auto flex flex-col items-center gap-4 px-4">
 					{#each navItems as { link_label, link_url }}
 						<li class="mb-2">
 							<PrismicLink
 								on:click={toggleMobileMenu}
 								field={link_url}
-								class="hover:text-saffron dark:hover:text-gray-300 drop-shadow-lg transition-colors whitespace-nowrap cursor-pointer"
+								class="active:text-saffron dark:active:text-saffron drop-shadow-lg transition-colors whitespace-nowrap cursor-pointer"
 								>{link_label}</PrismicLink
 							>
 						</li>
@@ -137,7 +137,7 @@
 						<li>
 							<PrismicLink
 								field={social_link}
-								class="hover:text-saffron dark:hover:text-gray-300 transition-colors cursor-pointer"
+								class="active:text-saffron dark:active:text-saffron transition-colors cursor-pointer"
 							>
 								<Icon class="w-8 h-8 drop-shadow-lg" icon={getSocialIcon(social_icon)} />
 							</PrismicLink>
@@ -149,12 +149,12 @@
 	{/if}
 </header>
 
-<ul class="hidden md:fixed top-24 right-2 md:flex flex-col items-center space-y-4 lg:hidden">
+<ul class="hidden md:fixed top-24 right-2 md:flex flex-col items-center space-y-4 lg:hidden text-davys_gray dark:text-saffron">
 	{#each socials as { social_link, social_icon }}
 		<li>
 			<PrismicLink
 				field={social_link}
-				class="text-saffron hover:text-saffron dark:hover:text-gray-300 transition-colors cursor-pointer"
+				class="hover:text-saffron dark:hover:text-gray-300 transition-colors cursor-pointer"
 			>
 				<Icon class="w-5 h-5 drop-shadow-lg" icon={getSocialIcon(social_icon)} />
 			</PrismicLink>
