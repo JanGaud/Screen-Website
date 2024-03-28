@@ -801,34 +801,32 @@ export default function initializeMouseFx() {
     });
 
     canvas.addEventListener('touchstart', function (e) {
-        // Initialize or update touch points for canvas interaction.
         var touches = e.targetTouches;
         while (touches.length >= pointers.length) { pointers.push(new pointerPrototype()); }
         for (var i = 0; i < touches.length; i++) {
             var posX = scaleByPixelRatio(touches[i].pageX);
             var posY = scaleByPixelRatio(touches[i].pageY);
-            if (pointers[i + 1]) { // Ensure the pointer exists before trying to update it.
+            if (pointers[i + 1]) {
                 updatePointerDownData(pointers[i + 1], touches[i].identifier, posX, posY);
             }
         }
-        // Note: We're not calling e.preventDefault() to allow for default touch behaviors like scrolling.
     }, false);
 
     function getCanvasRelativePosition(pageX, pageY) {
-        var rect = canvas.getBoundingClientRect(); // Gets the canvas position relative to the viewport
+        var rect = canvas.getBoundingClientRect();
         var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
         var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
         return {
-            x: (pageX - rect.left - scrollLeft) * (canvas.width / rect.width), // Adjust for scrolling and canvas size
-            y: (pageY - rect.top - scrollTop) * (canvas.height / rect.height) // Adjust for scrolling and canvas size
+            x: (pageX - rect.left - scrollLeft) * (canvas.width / rect.width),
+            y: (pageY - rect.top - scrollTop) * (canvas.height / rect.height)
         };
     }
 
     canvas.addEventListener('touchmove', function (e) {
         var touches = e.targetTouches;
         for (var i = 0; i < touches.length; i++) {
-            var pointer = pointers[i + 1]; // Assuming your logic ensures this pointer exists.
+            var pointer = pointers[i + 1];
             if (!pointer.down) continue;
 
             var pos = getCanvasRelativePosition(touches[i].pageX, touches[i].pageY);
@@ -838,7 +836,6 @@ export default function initializeMouseFx() {
 
 
     window.addEventListener('touchend', function (e) {
-        // Finalize touch interaction with the canvas.
         var touches = e.changedTouches;
         for (var i = 0; i < touches.length; i++) {
             var pointer = pointers.find(p => p.id === touches[i].identifier);
@@ -846,7 +843,6 @@ export default function initializeMouseFx() {
                 updatePointerUpData(pointer);
             }
         }
-        // No e.preventDefault() here to avoid interfering with other touch-related behaviors.
     });
 
 
