@@ -44,7 +44,7 @@
 </script>
 
 <section
-	class="dark:text-white text-davys_gray relative h-fit"
+	class="relative h-screen mb-28 pt-10"
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >
@@ -52,7 +52,7 @@
 	<div class="flex flex-wrap">
 		{#if slice.primary.presentation && slice.primary.what_i_do}
 			<div
-				class="w-full flex flex-col justify-start gap-10 lg:p-10 md:w-1/2 lg:w-2/3 z-20 pointer-events-none"
+				class="w-full h-full flex flex-col justify-start items-center gap-10 md:w-1/2 lg:w-2/3 z-20 pointer-events-none"
 			>
 				<hgroup class="text-left flex flex-col gap-4">
 					<h1

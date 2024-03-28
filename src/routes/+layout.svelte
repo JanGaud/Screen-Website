@@ -15,7 +15,7 @@
 
 	onMount(() => {
 		let intervalTime = 100;
-		let totalTime = 1400;
+		let totalTime = 1700;
 		let increment = (intervalTime / totalTime) * 100;
 
 		const interval = setInterval(() => {

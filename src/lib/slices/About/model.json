@@ -1,0 +1,35 @@
+{
+  "id": "about",
+  "type": "SharedSlice",
+  "name": "About",
+  "description": "About",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text",
+            "placeholder": "Text goes here",
+            "allowTargetBlank": true,
+            "multi": "heading3,paragraph,em,strong,hyperlink,o-list-item,list-item"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
