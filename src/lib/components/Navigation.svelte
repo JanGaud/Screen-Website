@@ -42,7 +42,9 @@
 		isMobileMenuOpen = !isMobileMenuOpen;
 		if (isMobileMenuOpen) {
 			document.body.style.overflow = 'hidden';
-        }
+		} else {
+			document.body.style.overflow = '';
+		}
 	}
 
 	onMount(() => {
@@ -115,10 +117,11 @@
 
 	{#if isMobileMenuOpen}
 		<div
-            style="height: calc(100vh - 5rem);"
-			class="md:hidden z-40 px-4 bg-white-backdrop dark:bg-steel-blue-backdrop dark:text-white text-davys_gray"
+			class="md:hidden h-screen z-40 px-4 bg-white-backdrop dark:bg-steel-blue-backdrop dark:text-white text-davys_gray"
 		>
-			<div class="h-full flex flex-col items-center justify-center gap-20 text-2xl uppercase font-bold tracking-wider">
+			<div
+				class="h-full flex flex-col items-center justify-center gap-20 text-2xl uppercase font-bold tracking-wider"
+			>
 				<ul class="w-full mx-auto flex flex-col items-center gap-10 px-4">
 					{#each navItems as { link_label, link_url }}
 						<li class="">
@@ -131,7 +134,7 @@
 						</li>
 					{/each}
 				</ul>
-				<ul class="flex w-full items-center justify-around">
+				<ul class="flex w-full items-center justify-center gap-6">
 					{#each socials as { social_link, social_icon }}
 						<li>
 							<PrismicLink
@@ -148,7 +151,9 @@
 	{/if}
 </header>
 
-<ul class="hidden md:fixed top-24 right-2 md:flex flex-col items-center space-y-4 lg:hidden text-davys_gray dark:text-saffron">
+<ul
+	class="hidden md:fixed top-24 right-2 md:flex flex-col items-center space-y-4 lg:hidden text-davys_gray dark:text-saffron"
+>
 	{#each socials as { social_link, social_icon }}
 		<li>
 			<PrismicLink
