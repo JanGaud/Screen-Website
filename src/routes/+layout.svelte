@@ -54,7 +54,7 @@
 {#if !isLoading}
 	<Navigation />
 	<ThemeToggle />
-	<main class="min-h-screen mt-32 mb-16 mx-4 md:mx-14 lg:mx-28">
+	<main class="min-h-screen w-full mt-32 mb-16 mx-4 md:mx-14 lg:mx-28 max-w-screen-lg">
 		<slot />
 	</main>
 {/if}
