@@ -63,7 +63,7 @@
 	class:scroll-up={isHeaderHidden}
 >
 	<nav
-		class="flex items-center bg-white-backdrop dark:bg-steel-blue-backdrop justify-between gap-4 px-10 py-1 border-b dark:border-saffron shadow-md"
+		class="mx-auto max-w-screen-2xl flex items-center bg-white-backdrop dark:bg-steel-blue-backdrop justify-between gap-4 px-10 py-1 border-b dark:border-saffron shadow-md"
 	>
 		<div class="hidden md:flex flex-grow w-1/3">
 			<ul class="flex items-center space-x-4 uppercase text-sm">

@@ -5,31 +5,27 @@
 
 	/** @type {import("@prismicio/client").Content.AboutSlice} */
 	export let slice;
+	
 
 	/**
 	 * @type {HTMLElement}
 	 */
-	let whatIDoRef;
+	let titleAnimation;
 
 	onMount(async () => {
-		// Dynamic imports for GSAP and its plugins
 		const gsapModule = await import('gsap');
 		const { ScrollTrigger } = await import('gsap/ScrollTrigger');
 
-		// Register ScrollTrigger plugin
 		gsapModule.gsap.registerPlugin(ScrollTrigger);
 
-		// Now, you can use gsap and ScrollTrigger
 		gsapModule.gsap.fromTo(
-			whatIDoRef,
+			titleAnimation,
 			{ y: 20, opacity: 0, scale: 1.2 },
 			{
 				scrollTrigger: {
-					trigger: whatIDoRef,
+					trigger: titleAnimation,
 					start: 'top center',
-					end: 'center center',
-
-					toggleActions: 'play none none reverse'
+					end: 'center center'
 				},
 				opacity: 1,
 				y: 0,
@@ -40,7 +36,6 @@
 		);
 	});
 </script>
-
 
 <section
 	class="relative mb-10 lg:mb-20 text-center md:text-left flex justify-center"
@@ -53,7 +48,7 @@
 		class="z-20 w-full flex flex-wrap flex-col items-center gap-4 cursor-none pointer-events-none"
 	>
 		<h2
-			bind:this={whatIDoRef}
+			bind:this={titleAnimation}
 			class="font-bold tracking-tighter mb-4 text-4xl lg:text-6xl drop-shadow-lg w-fit text-center border-b-8 border-saffron"
 		>
 			{slice.primary.title}
