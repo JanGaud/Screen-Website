@@ -59,7 +59,7 @@
 </script>
 
 <header
-	class="w-full h-20 fixed top-0 z-50 transition-transform duration-300 text-davys_gray dark:text-saffron"
+	class="w-screen h-20 fixed top-0 z-50 transition-transform duration-300 text-davys_gray dark:text-saffron"
 	class:scroll-up={isHeaderHidden}
 >
 	<nav

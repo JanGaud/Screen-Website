@@ -44,7 +44,7 @@
 </script>
 
 <section
-	class="relative h-screen mb-10 lg:mb-28 pt-10"
+	class="relative py-44"
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >

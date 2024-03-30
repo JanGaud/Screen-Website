@@ -1,6 +1,6 @@
 <script>
-  export let rgb = "238, 185, 2"; // Default RGB values
-  export let width = "600px"; // Default width
+  export let rgb = "238, 185, 2";
+  export let width = "600px";
   export let position = "right-0";
 </script>
 

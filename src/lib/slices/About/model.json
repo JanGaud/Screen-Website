@@ -25,7 +25,7 @@
             "label": "Text",
             "placeholder": "Text goes here",
             "allowTargetBlank": true,
-            "multi": "heading3,paragraph,em,strong,hyperlink,o-list-item,list-item"
+            "multi": "paragraph,strong,em"
           }
         }
       },

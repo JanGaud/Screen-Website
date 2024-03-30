@@ -14,11 +14,10 @@
     });
 </script>
 
-<canvas class="fixed top-0 w-full h-full opacity-0"></canvas>
+<canvas class="fixed top-0 w-screen h-full opacity-0"></canvas>
 
 <style>
     canvas {
-        width: 100%;
         height: 100%;
         background: transparent;
         transition: opacity 0.3s ease;

@@ -5,7 +5,6 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	server: {
 		fs: {
-			// Allow access to files from the project root.
 			allow: ['..']
 		}
 	}
