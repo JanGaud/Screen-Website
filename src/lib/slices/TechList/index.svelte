@@ -69,16 +69,16 @@
 	{#each slice.items as { tech_color, tech_name }, index}
 		<div
 			bind:this={components[index]}
-			class="tech-row mb-2 flex items-center justify-center gap-4 text-[#dcdcdc9f] dark:text-[#6060609f] backdrop-blur-sm"
+			class="tech-row mb-1 md:mb-3 flex items-center justify-center gap-4 text-[#dcdcdc9f] dark:text-[#6060609f] backdrop-blur-sm"
 		>
 			{#each Array(itemCount) as _, i}
 				<span
-					class="tech-item text-6xl font-bold uppercase tracking-wider drop-shadow-sm"
+					class="tech-item text-7xl md:text-8xl font-bold uppercase tracking-wider drop-shadow-sm"
 					style="color: {i === colorCount && tech_color ? tech_color : 'inherit'};"
 				>
 					{tech_name}
 				</span>
-				<span class="text-8xl">•</span>
+				<span class="text-7xl md:text-8xl">•</span>
 			{/each}
 		</div>
 	{/each}
