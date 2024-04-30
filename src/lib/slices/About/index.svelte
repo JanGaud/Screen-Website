@@ -47,7 +47,7 @@ class="relative mb-12 lg:mb-28 text-center md:text-left flex justify-center" dat
             {slice.primary.title}
         </h2>
         <div class="flex flex-wrap justify-center items-center gap-6 lg:grid lg:grid-cols-2">
-            <div class="h-[300px] w-full md:h-full overflow-hidden">
+            <div class="h-[300px] w-full md:h-full overflow-hidden p-2">
                 <model-viewer 
 				class="h-full w-full pointer-events-auto object-contain"
 				src={slice.primary.glb_link} alt="3D avatar" ar shadow-intensity="1" camera-controls auto-rotate></model-viewer>
