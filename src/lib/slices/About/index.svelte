@@ -37,11 +37,13 @@
 	});
 </script>
 
-<section class="relative mb-12 lg:mb-28 text-center md:text-left flex justify-center" data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
+<section 
+id={slice.primary.url_id}
+class="relative mb-12 lg:mb-28 text-center md:text-left flex justify-center" data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
     <Spotlight width="400px" position="left-3 top-0" rgb="45, 125, 210" />
     <Spotlight width="325px" position="bottom-3" rgb="244, 93, 1" />
     <div class="z-20 w-full flex flex-wrap flex-col items-center gap-4 cursor-none pointer-events-none">
-        <h2 bind:this={titleAnimation} class="font-bold tracking-tighter mb-4 text-4xl lg:text-7xl drop-shadow-lg w-fit text-center border-b-8 border-saffron">
+        <h2 bind:this={titleAnimation} class="font-bold tracking-tighter mb-16 text-4xl lg:text-7xl drop-shadow-lg w-fit text-center border-b-8 border-saffron">
             {slice.primary.title}
         </h2>
         <div class="flex flex-wrap justify-center items-center gap-6 lg:grid lg:grid-cols-2">
