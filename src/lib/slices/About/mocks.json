@@ -18,6 +18,16 @@
 						}
 					}
 				]
+			},
+			"url_id": {
+				"__TYPE__": "FieldContent",
+				"value": "jar",
+				"type": "Text"
+			},
+			"glb_link": {
+				"__TYPE__": "FieldContent",
+				"value": "century",
+				"type": "Text"
 			}
 		},
 		"items": []

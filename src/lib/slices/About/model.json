@@ -12,6 +12,13 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "url_id": {
+          "type": "Text",
+          "config": {
+            "label": "Url id",
+            "placeholder": ""
+          }
+        },
         "title": {
           "type": "Text",
           "config": {
@@ -26,6 +33,13 @@
             "placeholder": "Text goes here",
             "allowTargetBlank": true,
             "multi": "paragraph,strong,em"
+          }
+        },
+        "glb_link": {
+          "type": "Text",
+          "config": {
+            "label": "GLB_Link",
+            "placeholder": ""
           }
         }
       },

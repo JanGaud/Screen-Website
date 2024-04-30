@@ -300,6 +300,16 @@ export type AllDocumentTypes =
  */
 export interface AboutSliceDefaultPrimary {
 	/**
+	 * Url id field in *About → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: about.primary.url_id
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	url_id: prismic.KeyTextField;
+
+	/**
 	 * Title field in *About → Primary*
 	 *
 	 * - **Field Type**: Text
@@ -318,6 +328,16 @@ export interface AboutSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
 	text: prismic.RichTextField;
+
+	/**
+	 * GLB_Link field in *About → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: about.primary.glb_link
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	glb_link: prismic.KeyTextField;
 }
 
 /**
