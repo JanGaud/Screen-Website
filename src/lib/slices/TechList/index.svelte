@@ -59,7 +59,7 @@
 	{#each slice.items as { tech_color, tech_name }, index}
 		<div
 			bind:this={components[index]}
-			class="tech-row mb-4 flex items-center justify-center gap-4 text-[#dcdcdc9f] dark:text-[#6060609f] backdrop-blur-sm"
+			class="tech-row mb-2 flex items-center justify-center gap-4 text-[#dcdcdc9f] dark:text-[#6060609f] backdrop-blur-sm"
 		>
 			{#each Array(15) as _, i}
 				<span
