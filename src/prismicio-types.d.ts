@@ -204,6 +204,17 @@ interface SettingsDocumentData {
 	 * - **Documentation**: https://prismic.io/docs/field#geopoint
 	 */
 	company_location: prismic.GeoPointField;
+
+	/**
+	 * Legal Mention field in *settings*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: settings.legal_mention
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	legal_mention: prismic.KeyTextField;
 }
 
 /**

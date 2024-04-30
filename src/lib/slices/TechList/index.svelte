@@ -62,7 +62,7 @@
 >
 	<Spotlight width="375px" position="right-10 bottom-0" rgb="45, 125, 210" />
 	<h2
-		class="font-bold tracking-tighter mb-12 text-4xl lg:text-7xl drop-shadow-lg w-fit text-center border-b-8 border-saffron"
+		class="font-bold tracking-tighter mb-12 text-4xl lg:text-7xl drop-shadow-lg w-fit text-center md:text-left border-b-8 border-saffron"
 	>
 		{slice.primary.title}
 	</h2>

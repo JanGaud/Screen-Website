@@ -9,6 +9,7 @@
     import MouseFxBg from '$lib/components/MouseFxBg.svelte';
     import { onMount } from 'svelte';
     import { writable } from 'svelte/store';
+	import Footer from '$lib/components/Footer.svelte';
 
     let isLoading = true;
     let progress = writable(0);
@@ -57,6 +58,7 @@
     <main class="min-h-screen overflow-x-hidden container max-w-screen-2xl mb-16 mx-auto px-4 md:px-16 lg:px-20">
         <slot />
     </main>
+    <Footer />
 {/if}
 <MouseFxBg />
 <PrismicPreview {repositoryName} />

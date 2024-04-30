@@ -48,6 +48,13 @@
 				"config": {
 					"label": "Company Location"
 				}
+			},
+			"legal_mention": {
+				"type": "Text",
+				"config": {
+					"label": "Legal Mention",
+					"placeholder": ""
+				}
 			}
 		}
 	}

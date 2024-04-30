@@ -24,7 +24,6 @@
 	let isHeaderHidden = false;
 	let lastScrollPosition = 0;
 
-	// Function to get the appropriate social media icon
 	/**
 	 * @param {string} name
 	 */
