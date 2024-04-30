@@ -15,7 +15,7 @@
 
 	function updateCount() {
 		itemCount = window.innerWidth < 768 ? 10 : 15;
-		colorCount = window.innerWidth < 768 ? 4 : 7;
+		colorCount = window.innerWidth < 768 ? 3 : 7;
 	}
 
 	onMount(async () => {
