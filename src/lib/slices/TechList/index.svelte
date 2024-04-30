@@ -10,13 +10,19 @@
 	 * @type {any[]}
 	 */
 	let components = [];
+	let itemCount = 15;
+	let colorCount = 7;
 
-	function updateItemCount() {
-		const itemCount = window.innerWidth < 768 ? 7 : 15;
+	function updateCount() {
+		itemCount = window.innerWidth < 768 ? 10 : 15;
+		colorCount = window.innerWidth < 768 ? 4 : 7;
 	}
 
 	onMount(async () => {
 		if (typeof window !== 'undefined') {
+			updateCount();
+			window.addEventListener('resize', updateCount);
+
 			const STModule = await import('gsap/ScrollTrigger');
 			ScrollTrigger = STModule.ScrollTrigger;
 			gsap.registerPlugin(ScrollTrigger);
@@ -63,16 +69,16 @@
 	{#each slice.items as { tech_color, tech_name }, index}
 		<div
 			bind:this={components[index]}
-			class="hidden tech-row mb-2 md:flex items-center justify-center gap-4 text-[#dcdcdc9f] dark:text-[#6060609f] backdrop-blur-sm"
+			class="tech-row mb-2 flex items-center justify-center gap-4 text-[#dcdcdc9f] dark:text-[#6060609f] backdrop-blur-sm"
 		>
-			{#each Array(15) as _, i}
+			{#each Array(itemCount) as _, i}
 				<span
-					class="tech-item text-3xl lg:text-6xl font-bold uppercase tracking-wider drop-shadow-sm"
-					style="color: {i === 7 && tech_color ? tech_color : 'inherit'};"
+					class="tech-item text-6xl font-bold uppercase tracking-wider drop-shadow-sm"
+					style="color: {i === colorCount && tech_color ? tech_color : 'inherit'};"
 				>
 					{tech_name}
 				</span>
-				<span class="text-3xl lg:text-7xl">•</span>
+				<span class="text-8xl">•</span>
 			{/each}
 		</div>
 	{/each}
