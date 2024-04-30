@@ -56,7 +56,7 @@
 </script>
 
 <section
-	class="relative my-12 lg:my-28 z-20 pointer-events-none"
+	class="relative my-20 lg:my-28 z-20 pointer-events-none"
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >

@@ -37,7 +37,7 @@
 	});
 </script>
 
-<section class="relative my-12 lg:my-28 text-center md:text-left flex justify-center" data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
+<section class="relative mb-12 lg:mb-28 text-center md:text-left flex justify-center" data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
     <Spotlight width="400px" position="left-3 top-0" rgb="45, 125, 210" />
     <Spotlight width="325px" position="bottom-3" rgb="244, 93, 1" />
     <div class="z-20 w-full flex flex-wrap flex-col items-center gap-4 cursor-none pointer-events-none">
