@@ -45,9 +45,9 @@
             {slice.primary.title}
         </h2>
         <div class="flex flex-wrap justify-center items-center gap-6 lg:grid lg:grid-cols-2">
-            <div class="h-[300px] w-full md:h-full">
+            <div class="h-[300px] w-full md:h-full overflow-hidden">
                 <model-viewer 
-				class="h-full w-full pointer-events-auto"
+				class="h-full w-full pointer-events-auto object-contain"
 				src={slice.primary.glb_link} alt="3D avatar" ar shadow-intensity="1" camera-controls auto-rotate></model-viewer>
             </div>
             <div class="flex flex-col gap-4">
