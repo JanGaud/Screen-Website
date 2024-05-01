@@ -60,7 +60,7 @@
 			>
 				<ol class="h-full flex flex-col gap-6">
 					{#each slice.items as item}
-						<small class="text-left">{item.date_start}</small>
+						<small class="text-left text-yellow_green font-semibold">{item.date_start}</small>
 						<li class="flex flex-col gap-4 border-l pl-5">
 							<div>
 								<h3 class="text-xl font-bold uppercase">{item.company_name}</h3>
@@ -68,7 +68,7 @@
 							</div>
 							<p class="text-sm">{item.description}</p>
 						</li>
-						<small class="text-left">{item.date_end}</small>
+						<small class="text-left text-persimmon font-semibold">{item.date_end}</small>
 					{/each}
 				</ol>
 			</div>
