@@ -71,14 +71,6 @@
             "label": "Date End",
             "placeholder": ""
           }
-        },
-        "logo": {
-          "type": "Image",
-          "config": {
-            "label": "Logo",
-            "constraint": {},
-            "thumbnails": []
-          }
         }
       }
     }

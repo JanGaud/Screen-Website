@@ -13,21 +13,24 @@
       "imageUrl": "",
       "primary": {
         "title": {
-          "type": "StructuredText",
+          "type": "Text",
           "config": {
             "label": "Title",
-            "placeholder": "Italic for gold text",
-            "allowTargetBlank": true,
-            "single": "heading2,em"
+            "placeholder": ""
           }
         },
-        "subtitle": {
-          "type": "StructuredText",
+        "text": {
+          "type": "Text",
           "config": {
-            "label": "SubTitle",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "paragraph"
+            "label": "text",
+            "placeholder": ""
+          }
+        },
+        "url_id": {
+          "type": "Text",
+          "config": {
+            "label": "Url id",
+            "placeholder": ""
           }
         }
       },
@@ -54,6 +57,23 @@
             "label": "Image",
             "constraint": {},
             "thumbnails": []
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "wide": {
+          "type": "Boolean",
+          "config": {
+            "label": "Wide",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
           }
         }
       }

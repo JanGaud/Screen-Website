@@ -4,26 +4,19 @@
 		"variation": "default",
 		"primary": {
 			"title": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "heading2",
-						"content": {
-							"text": "Dried"
-						}
-					}
-				]
+				"__TYPE__": "FieldContent",
+				"value": "pony",
+				"type": "Text"
 			},
-			"subtitle": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Esse Lorem commodo qui eiusmod nulla fugiat consectetur occaecat in ullamco anim. Consectetur nostrud consectetur consectetur Lorem ea Lorem veniam id reprehenderit et sint ullamco tempor reprehenderit nostrud. Minim esse eu deserunt minim laborum Lorem Lorem magna officia adipisicing."
-						}
-					}
-				]
+			"text": {
+				"__TYPE__": "FieldContent",
+				"value": "alphabet",
+				"type": "Text"
+			},
+			"url_id": {
+				"__TYPE__": "FieldContent",
+				"value": "property",
+				"type": "Text"
 			}
 		},
 		"items": [
@@ -76,6 +69,23 @@
 							"alt": null,
 							"__TYPE__": "ImageContent",
 							"thumbnails": {}
+						}
+					],
+					[
+						"link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://twitter.com"
+							}
+						}
+					],
+					[
+						"wide",
+						{
+							"__TYPE__": "BooleanContent",
+							"value": true
 						}
 					]
 				]

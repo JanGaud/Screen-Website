@@ -399,16 +399,6 @@ export interface AboutSliceDefaultItem {
 	 * - **Documentation**: https://prismic.io/docs/field#date
 	 */
 	date_end: prismic.DateField;
-
-	/**
-	 * Logo field in *About → Items*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: about.items[].logo
-	 * - **Documentation**: https://prismic.io/docs/field#image
-	 */
-	logo: prismic.ImageField<never>;
 }
 
 /**
@@ -445,22 +435,32 @@ export interface BentoSliceDefaultPrimary {
 	/**
 	 * Title field in *Bento → Primary*
 	 *
-	 * - **Field Type**: Rich Text
-	 * - **Placeholder**: Italic for gold text
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
 	 * - **API ID Path**: bento.primary.title
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
-	title: prismic.RichTextField;
+	title: prismic.KeyTextField;
 
 	/**
-	 * SubTitle field in *Bento → Primary*
+	 * text field in *Bento → Primary*
 	 *
-	 * - **Field Type**: Rich Text
+	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: bento.primary.subtitle
-	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 * - **API ID Path**: bento.primary.text
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
-	subtitle: prismic.RichTextField;
+	text: prismic.KeyTextField;
+
+	/**
+	 * Url id field in *Bento → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bento.primary.url_id
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	url_id: prismic.KeyTextField;
 }
 
 /**
@@ -496,6 +496,27 @@ export interface BentoSliceDefaultItem {
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
 	image: prismic.ImageField<never>;
+
+	/**
+	 * Link field in *Bento → Items*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bento.items[].link
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	link: prismic.LinkField;
+
+	/**
+	 * Wide field in *Bento → Items*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: bento.items[].wide
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	wide: prismic.BooleanField;
 }
 
 /**
