@@ -1,6 +1,6 @@
 <script>
 	import Spotlight from '$lib/components/decorations/Spotlight.svelte';
-	import { PrismicRichText } from '@prismicio/svelte';
+	import { PrismicImage, PrismicLink, PrismicRichText } from '@prismicio/svelte';
 	import clsx from 'clsx';
 
 	/** @type {import("@prismicio/client").Content.BentoSlice} */
@@ -26,15 +26,18 @@
 		{#each slice.items as item}
 			<div
 				class={clsx(
-					'class="relative hover:scale-[1.01] transition-transform duration-200 lg:pointer-events-auto z-20 relative h-[320px] row-span-3 grid gap-4 p-4 border border-davys_gray-100 dark:border-white shadow-md bg-white-backdrop dark:bg-steel-blue-backdrop overflow-hidden',
+					'class="relative z-20 relative h-[320px] flex flex-col justify-between border border-davys_gray-100 dark:border-white shadow-md bg-white-backdrop dark:bg-steel-blue-backdrop overflow-hidden',
 					item.wide ? 'md:col-span-2' : 'md:col-span-1'
 				)}
 			>
-				<div class="z-30">
-					<h3 class="text-2xl">{item.title}</h3>
-					<div class="max-w-md text-balance text-gray-300">
+				<div class="z-30 p-4">
+					<h3 class="text-2xl mb-4">{item.title}</h3>
+					<div class="max-w-md text-balance text-gray-500 dark:text-davys_gray-700">
 						<PrismicRichText field={item.body} />
 					</div>
+				</div>
+				<div class="absolute bottom-4 left-2">
+					<PrismicLink class="btn-style h-fit" field={item.link}>{item.cta_label}</PrismicLink>
 				</div>
 			</div>
 		{/each}

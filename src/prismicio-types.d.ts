@@ -518,6 +518,16 @@ export interface BentoSliceDefaultItem {
 	link: prismic.LinkField;
 
 	/**
+	 * CTA Label field in *Bento → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bento.items[].cta_label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	cta_label: prismic.KeyTextField;
+
+	/**
 	 * Wide field in *Bento → Items*
 	 *
 	 * - **Field Type**: Boolean

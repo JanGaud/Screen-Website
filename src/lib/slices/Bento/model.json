@@ -75,6 +75,13 @@
             "select": null
           }
         },
+        "cta_label": {
+          "type": "Text",
+          "config": {
+            "label": "CTA Label",
+            "placeholder": ""
+          }
+        },
         "wide": {
           "type": "Boolean",
           "config": {
