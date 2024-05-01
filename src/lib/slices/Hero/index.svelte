@@ -48,7 +48,7 @@
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >
-	<Spotlight />
+	<Spotlight pulsate={true} />
 	<div class="flex flex-wrap">
 		{#if slice.primary.presentation && slice.primary.what_i_do}
 			<div

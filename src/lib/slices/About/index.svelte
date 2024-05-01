@@ -40,8 +40,8 @@
 <section 
 id={slice.primary.url_id}
 class="relative my-12 lg:my-28 text-center md:text-left flex justify-center" data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
-    <Spotlight width="400px" position="left-3 top-0" rgb="45, 125, 210" />
-    <Spotlight width="325px" position="bottom-3" rgb="244, 93, 1" />
+    <Spotlight width="400px" position="left-3 top-0" rgb="45, 125, 210" pulsate={false}/>
+    <Spotlight width="325px" position="bottom-3" rgb="244, 93, 1" pulsate={true}/>
     <div class="z-20 w-full flex flex-wrap flex-col items-center gap-4 cursor-none pointer-events-none">
         <h2 bind:this={titleAnimation} class="font-bold tracking-tighter mb-12 text-4xl lg:text-7xl drop-shadow-lg w-fit text-center border-b-8 border-saffron">
             {slice.primary.title}

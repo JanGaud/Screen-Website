@@ -60,7 +60,7 @@
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >
-	<Spotlight width="375px" position="right-10 bottom-0" rgb="45, 125, 210" />
+	<Spotlight width="375px" position="right-10 bottom-0" rgb="45, 125, 210" pulsate={false} />
 
 	{#each slice.items as { tech_color, tech_name }, index}
 		<div

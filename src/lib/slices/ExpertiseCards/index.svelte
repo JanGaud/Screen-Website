@@ -1,14 +1,16 @@
-<script>
+<script lang="ts">
     import { onMount } from 'svelte';
     import gsap from 'gsap';
     import Icon from '@iconify/svelte';
+    import type { Content } from '@prismicio/client'; // Adjusted import for typings
 
-    /** @type {import("@prismicio/client").Content.ExpertiseCardsSlice} */
-    export let slice;
+    // Assume this type comes from your CMS or defined types
+    export let slice: Content.ExpertiseCardsSlice;
 
-    let cards = [];  // This will hold references to the card elements
+    let cards: HTMLElement[] = []; // Define cards as an array of HTMLElements
 
-    async function animateCard(card) {
+    // Adjust animateCard to accept an HTMLElement
+    async function animateCard(card: HTMLElement) {
         const gsapModule = await import('gsap');
         const { ScrollTrigger } = await import('gsap/ScrollTrigger');
 
@@ -33,10 +35,11 @@
     }
 
     onMount(() => {
-        cards = Array.from(document.querySelectorAll('.card'));
+        cards = Array.from(document.querySelectorAll('.card')) as HTMLElement[];
         cards.forEach(animateCard);
     });
 </script>
+
 
 <section
     id={slice.primary.url_id}
