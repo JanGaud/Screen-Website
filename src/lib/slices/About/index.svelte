@@ -58,17 +58,19 @@
 			<div
 				class="lg:max-h-[600px] overflow-y-auto special-scroll lg:pointer-events-auto z-20 px-2 lg:col-span-1 order-2 lg:order-none"
 			>
-				<ol class="h-full flex flex-col gap-6">
+				<ol class="h-full flex flex-col gap-10">
 					{#each slice.items as item}
-						<small class="text-left text-yellow_green font-semibold">{item.date_start}</small>
-						<li class="flex flex-col gap-4 border-l pl-5">
-							<div>
-								<h3 class="text-xl font-bold uppercase">{item.company_name}</h3>
-								<h4 class="text-sm text-gray-500 dark:text-davys_gray-700">{item.job_title}</h4>
+						<li class="flex flex-col gap-1">
+							<small class="text-left text-yellow_green font-semibold">{item.date_start}</small>
+							<div class="flex flex-col gap-4 border-l pl-5 py-4">
+								<div>
+									<h3 class="text-xl font-bold uppercase">{item.company_name}</h3>
+									<h4 class="text-sm text-gray-500 dark:text-davys_gray-700">{item.job_title}</h4>
+								</div>
+								<p class="text-sm">{item.description}</p>
 							</div>
-							<p class="text-sm">{item.description}</p>
+							<small class="text-left text-persimmon font-semibold">{item.date_end}</small>
 						</li>
-						<small class="text-left text-persimmon font-semibold">{item.date_end}</small>
 					{/each}
 				</ol>
 			</div>
