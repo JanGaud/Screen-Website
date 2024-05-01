@@ -64,7 +64,7 @@
 						<li class="flex flex-col gap-4 border-l pl-5">
 							<div>
 								<h3 class="text-xl font-bold uppercase">{item.company_name}</h3>
-								<h4 class="text-sm text-gray-500">{item.job_title}</h4>
+								<h4 class="text-sm text-gray-500 dark:text-davys_gray-700">{item.job_title}</h4>
 							</div>
 							<p class="text-sm">{item.description}</p>
 						</li>
@@ -77,7 +77,7 @@
 			>
 				<div class="flex flex-col items-center lg:items-start gap-4">
 					<Icon class="w-10 h-10 text-saffron" icon="icomoon-free:quotes-left" />
-					<div class="text-gray-500 text-lg pl-4">
+					<div class="text-gray-500 dark:text-davys_gray-700 text-lg pl-4">
 						<PrismicRichText field={slice.primary.text} />
 					</div>
 					<Icon class="w-10 h-10 text-saffron" icon="icomoon-free:quotes-right" />
