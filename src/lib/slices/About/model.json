@@ -34,16 +34,53 @@
             "allowTargetBlank": true,
             "multi": "paragraph,strong,em"
           }
-        },
-        "glb_link": {
-          "type": "Text",
-          "config": {
-            "label": "GLB_Link",
-            "placeholder": ""
-          }
         }
       },
-      "items": {}
+      "items": {
+        "company_name": {
+          "type": "Text",
+          "config": {
+            "label": "Company Name",
+            "placeholder": ""
+          }
+        },
+        "job_title": {
+          "type": "Text",
+          "config": {
+            "label": "Job Title",
+            "placeholder": ""
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Description",
+            "placeholder": ""
+          }
+        },
+        "date_start": {
+          "type": "Date",
+          "config": {
+            "label": "Date Start",
+            "placeholder": ""
+          }
+        },
+        "date_end": {
+          "type": "Date",
+          "config": {
+            "label": "Date End",
+            "placeholder": ""
+          }
+        },
+        "logo": {
+          "type": "Image",
+          "config": {
+            "label": "Logo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      }
     }
   ]
 }

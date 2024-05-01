@@ -64,7 +64,7 @@
                             <Icon class="w-14 h-14" icon={icon_string} />
                         {/if}
                         <div class="w-fit">
-                            <h3 class="text-4xl px-2 font-extrabold drop-shadow-md">{title}</h3>
+                            <h3 class="text-4xl uppercase px-2 font-extrabold drop-shadow-md">{title}</h3>
                             <hr style="background-color: {color}" class="-mt-5 h-3 w-full" />
                         </div>
                     </div>

@@ -1,11 +1,11 @@
 <script>
 	import Spotlight from '$lib/components/decorations/Spotlight.svelte';
+	import Icon from '@iconify/svelte';
 	import { PrismicRichText } from '@prismicio/svelte';
 	import { onMount } from 'svelte';
 
 	/** @type {import("@prismicio/client").Content.AboutSlice} */
 	export let slice;
-	
 
 	/**
 	 * @type {HTMLElement}
@@ -37,19 +37,52 @@
 	});
 </script>
 
-<section 
-id={slice.primary.url_id}
-class="relative my-12 lg:my-28 text-center md:text-left flex justify-center" data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
-    <Spotlight width="400px" position="left-3 top-0" rgb="45, 125, 210" pulsate={false}/>
-    <Spotlight width="325px" position="bottom-3" rgb="244, 93, 1" pulsate={true}/>
-    <div class="z-20 w-full flex flex-wrap flex-col items-center gap-4 cursor-none pointer-events-none">
-        <h2 bind:this={titleAnimation} class="font-bold tracking-tighter mb-12 text-4xl lg:text-7xl drop-shadow-lg w-fit text-center border-b-8 border-saffron">
-            {slice.primary.title}
-        </h2>
-        <div class="flex flex-wrap justify-center items-center gap-6">
-            <div class="flex flex-col gap-4">
-                <PrismicRichText field={slice.primary.text} />
-            </div>
-        </div>
-    </div>
+<section
+	id={slice.primary.url_id}
+	class="relative my-12 lg:my-28 text-center md:text-left flex justify-center"
+	data-slice-type={slice.slice_type}
+	data-slice-variation={slice.variation}
+>
+	<Spotlight width="400px" position="left-3 top-0" rgb="45, 125, 210" pulsate={false} />
+	<Spotlight width="325px" position="bottom-3" rgb="244, 93, 1" pulsate={true} />
+	<div
+		class="z-20 w-full flex flex-wrap flex-col items-center gap-4 cursor-none pointer-events-none"
+	>
+		<h2
+			bind:this={titleAnimation}
+			class="font-bold tracking-tighter mb-12 text-4xl lg:text-7xl drop-shadow-lg w-fit text-center border-b-8 border-saffron"
+		>
+			{slice.primary.title}
+		</h2>
+		<div class="grid grid-cols-1 lg:grid-cols-3 gap-20 items-start">
+			<div
+				class="lg:max-h-[600px] overflow-y-auto special-scroll pointer-events-auto z-20 px-2 lg:col-span-1 order-2 lg:order-none"
+			>
+				<ol class="h-full flex flex-col gap-6">
+					{#each slice.items as item}
+						<small class="text-left">{item.date_start}</small>
+						<li class="flex flex-col gap-4 border-l pl-5">
+							<div>
+								<h3 class="text-xl font-bold uppercase">{item.company_name}</h3>
+								<h4 class="text-sm text-gray-500">{item.job_title}</h4>
+							</div>
+							<p class="text-sm">{item.description}</p>
+						</li>
+						<small class="text-left">{item.date_end}</small>
+					{/each}
+				</ol>
+			</div>
+			<div
+				class="flex flex-wrap justify-center items-center gap-6 lg:col-span-2 order-1 lg:order-none"
+			>
+				<div class="flex flex-col items-center lg:items-start gap-4">
+					<Icon class="w-10 h-10 text-saffron" icon="icomoon-free:quotes-left" />
+					<div class="text-gray-500 text-lg pl-4">
+						<PrismicRichText field={slice.primary.text} />
+					</div>
+					<Icon class="w-10 h-10 text-saffron" icon="icomoon-free:quotes-right" />
+				</div>
+			</div>
+		</div>
+	</div>
 </section>

@@ -344,16 +344,71 @@ export interface AboutSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
 	text: prismic.RichTextField;
+}
 
+/**
+ * Primary content in *About → Items*
+ */
+export interface AboutSliceDefaultItem {
 	/**
-	 * GLB_Link field in *About → Primary*
+	 * Company Name field in *About → Items*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: about.primary.glb_link
+	 * - **API ID Path**: about.items[].company_name
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
-	glb_link: prismic.KeyTextField;
+	company_name: prismic.KeyTextField;
+
+	/**
+	 * Job Title field in *About → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: about.items[].job_title
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	job_title: prismic.KeyTextField;
+
+	/**
+	 * Description field in *About → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: about.items[].description
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	description: prismic.KeyTextField;
+
+	/**
+	 * Date Start field in *About → Items*
+	 *
+	 * - **Field Type**: Date
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: about.items[].date_start
+	 * - **Documentation**: https://prismic.io/docs/field#date
+	 */
+	date_start: prismic.DateField;
+
+	/**
+	 * Date End field in *About → Items*
+	 *
+	 * - **Field Type**: Date
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: about.items[].date_end
+	 * - **Documentation**: https://prismic.io/docs/field#date
+	 */
+	date_end: prismic.DateField;
+
+	/**
+	 * Logo field in *About → Items*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: about.items[].logo
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	logo: prismic.ImageField<never>;
 }
 
 /**
@@ -366,7 +421,7 @@ export interface AboutSliceDefaultPrimary {
 export type AboutSliceDefault = prismic.SharedSliceVariation<
 	'default',
 	Simplify<AboutSliceDefaultPrimary>,
-	never
+	Simplify<AboutSliceDefaultItem>
 >;
 
 /**
@@ -728,6 +783,7 @@ declare module '@prismicio/client' {
 			AllDocumentTypes,
 			AboutSlice,
 			AboutSliceDefaultPrimary,
+			AboutSliceDefaultItem,
 			AboutSliceVariation,
 			AboutSliceDefault,
 			BentoSlice,
