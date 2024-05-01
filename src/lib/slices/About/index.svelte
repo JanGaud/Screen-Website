@@ -56,7 +56,7 @@
 		</h2>
 		<div class="grid grid-cols-1 lg:grid-cols-3 gap-20 items-start">
 			<div
-				class="lg:max-h-[600px] overflow-y-auto special-scroll pointer-events-auto z-20 px-2 lg:col-span-1 order-2 lg:order-none"
+				class="lg:max-h-[600px] overflow-y-auto special-scroll lg:pointer-events-auto z-20 px-2 lg:col-span-1 order-2 lg:order-none"
 			>
 				<ol class="h-full flex flex-col gap-6">
 					{#each slice.items as item}
