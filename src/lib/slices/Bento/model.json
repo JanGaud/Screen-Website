@@ -32,6 +32,14 @@
             "label": "Url id",
             "placeholder": ""
           }
+        },
+        "bg_img": {
+          "type": "Image",
+          "config": {
+            "label": "Bg_Img",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {

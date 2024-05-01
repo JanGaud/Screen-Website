@@ -461,6 +461,16 @@ export interface BentoSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	url_id: prismic.KeyTextField;
+
+	/**
+	 * Bg_Img field in *Bento → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bento.primary.bg_img
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	bg_img: prismic.ImageField<never>;
 }
 
 /**
