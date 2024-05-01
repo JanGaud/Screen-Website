@@ -30,7 +30,7 @@
 	}
 </script>
 
-<footer class="z-50 flex flex-col items-center pointer-events-auto">
+<footer class="z-50 flex flex-col items-center pointer-events-auto max-w-screen-2xl mx-auto">
 	<div class="container pt-9">
 		<div class="mb-6 flex justify-center space-x-2">
 			{#each socials as { social_link, social_icon }}
