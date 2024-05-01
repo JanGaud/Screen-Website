@@ -1,0 +1,62 @@
+{
+  "id": "expertise_cards",
+  "type": "SharedSlice",
+  "name": "ExpertiseCards",
+  "description": "ExpertiseCards",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "url_id": {
+          "type": "Text",
+          "config": {
+            "label": "Url id",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "icon_string": {
+          "type": "Text",
+          "config": {
+            "label": "Icon_String",
+            "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "text": {
+          "type": "Text",
+          "config": {
+            "label": "Text",
+            "placeholder": ""
+          }
+        },
+        "color": {
+          "type": "Color",
+          "config": {
+            "label": "Color",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

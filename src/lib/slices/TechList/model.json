@@ -11,15 +11,7 @@
       "version": "initial",
       "description": "Default",
       "imageUrl": "",
-      "primary": {
-        "title": {
-          "type": "Text",
-          "config": {
-            "label": "Title",
-            "placeholder": ""
-          }
-        }
-      },
+      "primary": {},
       "items": {
         "tech_name": {
           "type": "Text",

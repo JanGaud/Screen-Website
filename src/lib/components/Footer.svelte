@@ -36,8 +36,7 @@
 			{#each socials as { social_link, social_icon }}
 				<PrismicLink
 					field={social_link}
-					type="button"
-					class="rounded-full bg-transparent p-3 font-medium uppercase leading-normal transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-none focus:ring-0 dark:text-white dark:hover:bg-secondary-900"
+					class="rounded-full z-40 pointer-events-auto cursor-pointer p-3"
 				>
 					<Icon class="w-7 h-7 drop-shadow-lg" icon={getSocialIcon(social_icon)} />
 				</PrismicLink>

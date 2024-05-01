@@ -60,7 +60,12 @@ export type NavigationDocument<Lang extends string = string> = prismic.PrismicDo
 	Lang
 >;
 
-type PageDocumentDataSlicesSlice = TechListSlice | AboutSlice | HeroSlice;
+type PageDocumentDataSlicesSlice =
+	| ExpertiseCardsSlice
+	| BentoSlice
+	| TechListSlice
+	| AboutSlice
+	| HeroSlice;
 
 /**
  * Content for Page documents
@@ -379,6 +384,193 @@ type AboutSliceVariation = AboutSliceDefault;
 export type AboutSlice = prismic.SharedSlice<'about', AboutSliceVariation>;
 
 /**
+ * Primary content in *Bento → Primary*
+ */
+export interface BentoSliceDefaultPrimary {
+	/**
+	 * Title field in *Bento → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: Italic for gold text
+	 * - **API ID Path**: bento.primary.title
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	title: prismic.RichTextField;
+
+	/**
+	 * SubTitle field in *Bento → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bento.primary.subtitle
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	subtitle: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Bento → Items*
+ */
+export interface BentoSliceDefaultItem {
+	/**
+	 * Title field in *Bento → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bento.items[].title
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	title: prismic.KeyTextField;
+
+	/**
+	 * Body field in *Bento → Items*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bento.items[].body
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	body: prismic.RichTextField;
+
+	/**
+	 * Image field in *Bento → Items*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: bento.items[].image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Bento Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BentoSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<BentoSliceDefaultPrimary>,
+	Simplify<BentoSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Bento*
+ */
+type BentoSliceVariation = BentoSliceDefault;
+
+/**
+ * Bento Shared Slice
+ *
+ * - **API ID**: `bento`
+ * - **Description**: Bento
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BentoSlice = prismic.SharedSlice<'bento', BentoSliceVariation>;
+
+/**
+ * Primary content in *ExpertiseCards → Primary*
+ */
+export interface ExpertiseCardsSliceDefaultPrimary {
+	/**
+	 * Title field in *ExpertiseCards → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: expertise_cards.primary.title
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	title: prismic.KeyTextField;
+
+	/**
+	 * Url id field in *ExpertiseCards → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: expertise_cards.primary.url_id
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	url_id: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *ExpertiseCards → Items*
+ */
+export interface ExpertiseCardsSliceDefaultItem {
+	/**
+	 * Icon_String field in *ExpertiseCards → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: expertise_cards.items[].icon_string
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	icon_string: prismic.KeyTextField;
+
+	/**
+	 * Title field in *ExpertiseCards → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: expertise_cards.items[].title
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	title: prismic.KeyTextField;
+
+	/**
+	 * Text field in *ExpertiseCards → Items*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: expertise_cards.items[].text
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	text: prismic.KeyTextField;
+
+	/**
+	 * Color field in *ExpertiseCards → Items*
+	 *
+	 * - **Field Type**: Color
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: expertise_cards.items[].color
+	 * - **Documentation**: https://prismic.io/docs/field#color
+	 */
+	color: prismic.ColorField;
+}
+
+/**
+ * Default variation for ExpertiseCards Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ExpertiseCardsSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<ExpertiseCardsSliceDefaultPrimary>,
+	Simplify<ExpertiseCardsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *ExpertiseCards*
+ */
+type ExpertiseCardsSliceVariation = ExpertiseCardsSliceDefault;
+
+/**
+ * ExpertiseCards Shared Slice
+ *
+ * - **API ID**: `expertise_cards`
+ * - **Description**: ExpertiseCards
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ExpertiseCardsSlice = prismic.SharedSlice<
+	'expertise_cards',
+	ExpertiseCardsSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -461,21 +653,6 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<'hero', HeroSliceVariation>;
 
 /**
- * Primary content in *TechList → Primary*
- */
-export interface TechListSliceDefaultPrimary {
-	/**
-	 * Title field in *TechList → Primary*
-	 *
-	 * - **Field Type**: Text
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: tech_list.primary.title
-	 * - **Documentation**: https://prismic.io/docs/field#key-text
-	 */
-	title: prismic.KeyTextField;
-}
-
-/**
  * Primary content in *TechList → Items*
  */
 export interface TechListSliceDefaultItem {
@@ -509,7 +686,7 @@ export interface TechListSliceDefaultItem {
  */
 export type TechListSliceDefault = prismic.SharedSliceVariation<
 	'default',
-	Simplify<TechListSliceDefaultPrimary>,
+	Record<string, never>,
 	Simplify<TechListSliceDefaultItem>
 >;
 
@@ -553,12 +730,21 @@ declare module '@prismicio/client' {
 			AboutSliceDefaultPrimary,
 			AboutSliceVariation,
 			AboutSliceDefault,
+			BentoSlice,
+			BentoSliceDefaultPrimary,
+			BentoSliceDefaultItem,
+			BentoSliceVariation,
+			BentoSliceDefault,
+			ExpertiseCardsSlice,
+			ExpertiseCardsSliceDefaultPrimary,
+			ExpertiseCardsSliceDefaultItem,
+			ExpertiseCardsSliceVariation,
+			ExpertiseCardsSliceDefault,
 			HeroSlice,
 			HeroSliceDefaultPrimary,
 			HeroSliceVariation,
 			HeroSliceDefault,
 			TechListSlice,
-			TechListSliceDefaultPrimary,
 			TechListSliceDefaultItem,
 			TechListSliceVariation,
 			TechListSliceDefault

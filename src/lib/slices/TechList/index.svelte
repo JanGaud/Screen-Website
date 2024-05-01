@@ -56,16 +56,12 @@
 </script>
 
 <section
-	class="relative my-20 lg:my-28 z-20 pointer-events-none"
+	class="relative mb-20 lg:mb-28 z-20 pointer-events-none"
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >
 	<Spotlight width="375px" position="right-10 bottom-0" rgb="45, 125, 210" />
-	<h2
-		class="font-bold tracking-tighter mb-12 text-4xl lg:text-7xl drop-shadow-lg w-fit text-center md:text-left border-b-8 border-saffron"
-	>
-		{slice.primary.title}
-	</h2>
+
 	{#each slice.items as { tech_color, tech_name }, index}
 		<div
 			bind:this={components[index]}

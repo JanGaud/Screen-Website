@@ -27,6 +27,12 @@
 				"fieldset": "Slice Zone",
 				"config": {
 					"choices": {
+						"expertise_cards": {
+							"type": "SharedSlice"
+						},
+						"bento": {
+							"type": "SharedSlice"
+						},
 						"tech_list": {
 							"type": "SharedSlice"
 						},
