@@ -112,31 +112,34 @@ h6 {
     }
 }
 
-/*    Scrollbar Styling     */
+/* Scrollbar Styling */
 
-/* Track */
-::-webkit-scrollbar-track {
-    background: #000000;
-    border-radius: 10px;
-}
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #a7a7a7;
-}
+@media (min-width: 768px) {
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #000000;
+        border-radius: 10px;
+    }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #a7a7a7;
+    }
 
-/* Scrollbar overall */
-::-webkit-scrollbar {
-    width: 6px;
-    height: 2px;
-}
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
 
-/* Scrollbar overall */
-.special-scroll::-webkit-scrollbar {
-    width: 2px;
+    /* Scrollbar overall */
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 2px;
+    }
+
+    /* Specific styling for elements with .special-scroll class */
+    .special-scroll::-webkit-scrollbar {
+        width: 2px;
+    }
 }
