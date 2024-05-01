@@ -21,14 +21,23 @@
 		<ul class="flex flex-wrap gap-2 lg:gap-0 md:grid md:grid-cols-2 xl:grid-cols-3">
 			{#each slice.items as { title, text, icon_string, color }}
 				<li
-					class="w-full md:min-w-[325px] flex flex-col gap-6 p-4 border-2 shadow-md bg-white-backdrop dark:bg-steel-blue-backdrop"
+					class="w-full lg:min-w-[325px] flex flex-col gap-6 p-4 border border-davys_gray-100 dark:border-white shadow-md bg-white-backdrop dark:bg-steel-blue-backdrop"
 				>
-					<div class="relative flex justify-between items-center h-16">
+					<div class="relative flex justify-between items-center h-14">
 						{#if icon_string}<Icon class="w-14 h-14" icon={icon_string} />{/if}
-						<h3 style="color: {color}" class="text-4xl font-extrabold drop-shadow-md">{title}</h3>
+						<div class="w-fit">
+							<h3 class="text-4xl px-2 font-extrabold drop-shadow-md">{title}</h3>
+							<hr style="background-color: {color}" class="-mt-5 h-3 w-full" />
+						</div>
 					</div>
-					<div class="h-full w-full overflow-hidden">
-						<p class="text-lg">{text}</p>
+					<div>
+						<span class="text-gray-500">&lt;p&gt;</span>
+						<div class="flex items-center">
+							<div class="pl-2 border-l-2 border-gray-500 h-full w-full overflow-hidden">
+								<p class="text-lg">{text}</p>
+							</div>
+						</div>
+						<span class="text-gray-500">&lt;/p&gt;</span>
 					</div>
 				</li>
 			{/each}

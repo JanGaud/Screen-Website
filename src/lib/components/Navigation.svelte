@@ -72,7 +72,7 @@
 							field={link_url}
 							class="hover:text-saffron dark:hover:text-gray-300 drop-shadow-lg transition-colors whitespace-nowrap cursor-pointer"
 							>{link_label}</PrismicLink
-						><span>/</span>
+						><span>//</span>
 					</li>
 				{/each}
 			</ul>
