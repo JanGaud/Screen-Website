@@ -61,6 +61,7 @@ export type NavigationDocument<Lang extends string = string> = prismic.PrismicDo
 >;
 
 type PageDocumentDataSlicesSlice =
+	| ContactFormSlice
 	| ExpertiseCardsSlice
 	| BentoSlice
 	| TechListSlice
@@ -567,6 +568,99 @@ type BentoSliceVariation = BentoSliceDefault;
 export type BentoSlice = prismic.SharedSlice<'bento', BentoSliceVariation>;
 
 /**
+ * Primary content in *ContactForm → Primary*
+ */
+export interface ContactFormSliceDefaultPrimary {
+	/**
+	 * Link_url field in *ContactForm → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contact_form.primary.link_url
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	link_url: prismic.KeyTextField;
+
+	/**
+	 * Title field in *ContactForm → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contact_form.primary.title
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	title: prismic.KeyTextField;
+
+	/**
+	 * Letter_Image field in *ContactForm → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contact_form.primary.letter_image
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	letter_image: prismic.ImageField<never>;
+
+	/**
+	 * Banner_Title field in *ContactForm → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contact_form.primary.banner_title
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	banner_title: prismic.KeyTextField;
+
+	/**
+	 * Banner_Texte field in *ContactForm → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contact_form.primary.banner_texte
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	banner_texte: prismic.KeyTextField;
+
+	/**
+	 * Looking_For_Work field in *ContactForm → Primary*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: contact_form.primary.looking_for_work
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	looking_for_work: prismic.BooleanField;
+}
+
+/**
+ * Default variation for ContactForm Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactFormSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<ContactFormSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *ContactForm*
+ */
+type ContactFormSliceVariation = ContactFormSliceDefault;
+
+/**
+ * ContactForm Shared Slice
+ *
+ * - **API ID**: `contact_form`
+ * - **Description**: ContactForm
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactFormSlice = prismic.SharedSlice<'contact_form', ContactFormSliceVariation>;
+
+/**
  * Primary content in *ExpertiseCards → Primary*
  */
 export interface ExpertiseCardsSliceDefaultPrimary {
@@ -832,6 +926,10 @@ declare module '@prismicio/client' {
 			BentoSliceDefaultItem,
 			BentoSliceVariation,
 			BentoSliceDefault,
+			ContactFormSlice,
+			ContactFormSliceDefaultPrimary,
+			ContactFormSliceVariation,
+			ContactFormSliceDefault,
 			ExpertiseCardsSlice,
 			ExpertiseCardsSliceDefaultPrimary,
 			ExpertiseCardsSliceDefaultItem,

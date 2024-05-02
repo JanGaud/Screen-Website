@@ -1,0 +1,64 @@
+{
+  "id": "contact_form",
+  "type": "SharedSlice",
+  "name": "ContactForm",
+  "description": "ContactForm",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "link_url": {
+          "type": "Text",
+          "config": {
+            "label": "Link_url",
+            "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "letter_image": {
+          "type": "Image",
+          "config": {
+            "label": "Letter_Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "banner_title": {
+          "type": "Text",
+          "config": {
+            "label": "Banner_Title",
+            "placeholder": ""
+          }
+        },
+        "banner_texte": {
+          "type": "Text",
+          "config": {
+            "label": "Banner_Texte",
+            "placeholder": ""
+          }
+        },
+        "looking_for_work": {
+          "type": "Boolean",
+          "config": {
+            "label": "Looking_For_Work",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

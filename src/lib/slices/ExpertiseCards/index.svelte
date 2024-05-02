@@ -54,7 +54,7 @@
     </div>
 
     <div class="lg:px-10">
-        <ul class="flex flex-wrap gap-2 md:grid md:grid-cols-2 xl:grid-cols-3">
+        <ul class="flex flex-wrap gap-2 md:grid md:grid-cols-2 lg:grid-cols-3">
             {#each slice.items as { title, text, icon_string, color }, i}
                 <li bind:this={cards[i]} 
                     class="card w-full flex flex-col gap-6 p-4 border border-davys_gray-100 dark:border-white shadow-md bg-white-backdrop dark:bg-steel-blue-backdrop"

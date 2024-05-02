@@ -16,7 +16,7 @@
 	<Spotlight width="400px" position="top-4 left-60" pulsate={false} />
 	<Spotlight width="325px" position="bottom-3 right-4" rgb="151,204,4" pulsate={true} />
 	<header class="w-full text-center">
-		<h2 class="text-7xl font-bold drop-shadow-md">{slice.primary.title}</h2>
+		<h2 class="font-bold tracking-tighter mb-4 text-4xl lg:text-7xl drop-shadow-lg inline-block">{slice.primary.title}</h2>
 		<p class="w-[300px] text-balance mx-auto text-gray-500 dark:text-davys_gray-700 text-lg">
 			{slice.primary.text}
 		</p>
@@ -26,13 +26,13 @@
 		{#each slice.items as item}
 			<div
 				class={clsx(
-					'class="relative z-20 relative h-[320px] flex flex-col justify-between border border-davys_gray-100 dark:border-white shadow-md bg-white-backdrop dark:bg-steel-blue-backdrop overflow-hidden',
+					'class="relative z-20 relative md:h-[320px] flex flex-col justify-between border border-davys_gray-100 dark:border-white shadow-md bg-white-backdrop dark:bg-steel-blue-backdrop overflow-hidden',
 					item.wide ? 'md:col-span-2' : 'md:col-span-1'
 				)}
 			>
 				<div class="z-30 p-4">
 					<h3 class="text-2xl mb-4">{item.title}</h3>
-					<div class="max-w-md text-balance text-gray-500 dark:text-davys_gray-700">
+					<div class="max-w-md min-h-36 line-clamp-3 overflow-hidden text-balance text-gray-500 dark:text-davys_gray-700">
 						<PrismicRichText field={item.body} />
 					</div>
 				</div>
