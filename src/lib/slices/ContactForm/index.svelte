@@ -99,7 +99,7 @@
 					></textarea>
 				</div>
 
-				<div class="z-20 pointer-events-auto">
+				<div class="w-full flex justify-center md:justify-start z-20 pointer-events-auto">
 					<button type="submit" class="btn-style h-fit">Send</button>
 				</div>
 			</div>
