@@ -17,7 +17,7 @@
 			class="absolute z-30 py-12 text-white w-full h-full flex items-center justify-center pointer-events-none"
 		>
 			<div class="w-full mx-4 md:mx-10 flex flex-col gap-4 p-2">
-				<h3 class="text-2xl lg:text-5xl uppercase font-bold drop-shadow">
+				<h3 class="text-2xl lg:text-5xl uppercase font-bold drop-shadow bg-gradient-to-r from-saffron via-yellow_green to-steel_blue inline-block text-transparent bg-clip-text">
 					{slice.primary.banner_title}
 				</h3>
 				<p class="text-lg tracking-wider drop-shadow">{slice.primary.banner_texte}</p>
