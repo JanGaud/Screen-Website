@@ -11,10 +11,32 @@
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >
-	<div class="relative h-full w-full overflow-hidden">
-		<div class="absolute py-12 text-white w-full h-full flex items-center justify-center bg-davys_gray-100 opacity-90">
+	<div class="relative h-[500px] md:h-full w-full overflow-hidden">
+		<div class="absolute w-full h-full bg-davys_gray-100 opacity-90 pointer-events-none"></div>
+		<div
+			class="absolute z-20 top-10 right-6 lg:right-2 w-20 lg:w-24 rounded-full border-4 {slice
+				.primary.looking_for_work
+				? 'border-green-600 border-opacity-50'
+				: 'border-red-600 border-opacity-50'}"
+		>
+			<PrismicImage
+				class="w-full h-full object-cover rounded-full grayscale"
+				field={slice.primary.avatar}
+			/>
+		</div>
+		<div class="absolute z-20 top-10 right-6 lg:right-2 w-20 lg:w-24 rounded-full">
+			<img
+				class="w-full h-full object-cover rounded-full"
+				src="static/1687102860396.png"
+				alt="Letter">
+		</div>
+		<div
+			class="absolute z-30 py-12 text-white w-full h-full flex items-center justify-center pointer-events-none"
+		>
 			<div class="w-full mx-10 flex flex-col gap-4 p-2">
-				<h3 class="text-2xl lg:text-5xl uppercase font-bold drop-shadow">{slice.primary.banner_title}</h3>
+				<h3 class="text-2xl lg:text-5xl uppercase font-bold drop-shadow">
+					{slice.primary.banner_title}
+				</h3>
 				<p class="text-lg tracking-wider drop-shadow">{slice.primary.banner_texte}</p>
 			</div>
 		</div>
@@ -22,7 +44,7 @@
 	</div>
 
 	<div class="relative overflow-hidden w-full px-2 md:px-20 py-14">
-			<Spotlight width="400px" position="top-28 left-32" rgb="244, 93, 1" pulsate={true} />
+		<Spotlight width="400px" position="top-28 left-32" rgb="244, 93, 1" pulsate={true} />
 		<div class="flex justify-center items-center w-full">
 			<h2
 				class="font-bold tracking-tighter my-6 text-4xl lg:text-7xl drop-shadow-lg border-b-8 text-white border-saffron text-center"
