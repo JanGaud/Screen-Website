@@ -26,7 +26,7 @@
 		{#each slice.items as item}
 			<div
 				class={clsx(
-					'class="relative z-20 relative md:h-[320px] flex flex-col justify-between border border-davys_gray-100 dark:border-white shadow-md bg-white-backdrop dark:bg-steel-blue-backdrop overflow-hidden',
+					'class="relative md:h-[320px] flex flex-col justify-between border border-davys_gray-100 dark:border-white shadow-md bg-white-backdrop dark:bg-steel-blue-backdrop overflow-hidden',
 					item.wide ? 'md:col-span-2' : 'md:col-span-1'
 				)}
 			>
