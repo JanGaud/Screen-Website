@@ -5,6 +5,92 @@ import type * as prismic from '@prismicio/client';
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
+ * Content for Form_Errors documents
+ */
+interface FormErrorsDocumentData {
+	/**
+	 * No_Name field in *Form_Errors*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: form_errors.no_name
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	no_name: prismic.KeyTextField;
+
+	/**
+	 * No_Email field in *Form_Errors*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: form_errors.no_email
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	no_email: prismic.KeyTextField;
+
+	/**
+	 * No_Message field in *Form_Errors*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: form_errors.no_message
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	no_message: prismic.KeyTextField;
+
+	/**
+	 * Inv_Name field in *Form_Errors*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: form_errors.inv_name
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	inv_name: prismic.KeyTextField;
+
+	/**
+	 * Inv_Email field in *Form_Errors*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: form_errors.inv_email
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	inv_email: prismic.KeyTextField;
+
+	/**
+	 * Inv_Message field in *Form_Errors*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: form_errors.inv_message
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	inv_message: prismic.KeyTextField;
+}
+
+/**
+ * Form_Errors document from Prismic
+ *
+ * - **API ID**: `form_errors`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FormErrorsDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+	Simplify<FormErrorsDocumentData>,
+	'form_errors',
+	Lang
+>;
+
+/**
  * Item in *navigation → Nav Item*
  */
 export interface NavigationDocumentDataNavItemItem {
@@ -307,6 +393,7 @@ export type SocialsDocument<Lang extends string = string> = prismic.PrismicDocum
 >;
 
 export type AllDocumentTypes =
+	| FormErrorsDocument
 	| NavigationDocument
 	| PageDocument
 	| SettingsDocument
@@ -914,6 +1001,8 @@ declare module '@prismicio/client' {
 
 	namespace Content {
 		export type {
+			FormErrorsDocument,
+			FormErrorsDocumentData,
 			NavigationDocument,
 			NavigationDocumentData,
 			NavigationDocumentDataNavItemItem,

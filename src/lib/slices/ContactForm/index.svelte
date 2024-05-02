@@ -1,9 +1,31 @@
 <script>
 	import Spotlight from '$lib/components/decorations/Spotlight.svelte';
 	import { PrismicImage } from '@prismicio/svelte';
+	import { validateForm } from '../../../utils/formValidator'; // Make sure the path is correct
 
 	/** @type {import("@prismicio/client").Content.ContactFormSlice} */
 	export let slice;
+	/**
+	 * @type {HTMLFormElement}
+	 */
+	let form;
+
+	/**
+	 * @param {{ preventDefault: () => void; }} event
+	 */
+	async function handleSubmit(event) {
+		event.preventDefault();
+		if (!form) {
+			console.error('Form is not initialized');
+			return;
+		}
+		const isValid = await validateForm(form);
+		if (isValid) {
+			console.log('Form is valid and has been submitted!');
+		} else {
+			console.log('Validation failed');
+		}
+	}
 </script>
 
 <section
@@ -17,7 +39,9 @@
 			class="absolute z-30 py-12 text-white w-full h-full flex items-center justify-center pointer-events-none"
 		>
 			<div class="w-full mx-4 md:mx-10 flex flex-col gap-4 p-2">
-				<h3 class="text-2xl lg:text-5xl uppercase font-bold drop-shadow bg-gradient-to-r from-saffron via-yellow_green to-steel_blue inline-block text-transparent bg-clip-text">
+				<h3
+					class="text-2xl lg:text-5xl uppercase font-bold drop-shadow bg-gradient-to-r from-saffron via-yellow_green to-steel_blue inline-block text-transparent bg-clip-text"
+				>
 					{slice.primary.banner_title}
 				</h3>
 				<p class="text-lg tracking-wider drop-shadow">{slice.primary.banner_texte}</p>
@@ -35,27 +59,35 @@
 				{slice.primary.title}
 			</h2>
 		</div>
-		<form id={slice.primary.link_url} class="w-full h-full flex flex-col items-start" action="post">
+		<form
+			on:submit={handleSubmit}
+			bind:this={form}
+			id={slice.primary.link_url}
+			novalidate
+			class="w-full h-full flex flex-col items-start"
+		>
 			<div class="w-full flex flex-col items-start text-davys_gray-700 text-lg">
 				<div class="w-full mb-6 flex flex-col text-lg">
-					<label for="name" class="mb-1">Name</label>
+					<label for="nom" class="mb-1">Name</label>
 					<input
 						type="text"
-						id="name"
-						name="name"
+						id="nom"
+						name="nom"
 						class="w-full h-8 rounded-full bg-steel-blue-backdrop border px-2 border-white z-20 pointer-events-auto focus:outline-none focus:border-saffron focus:border-2"
 					/>
+					<p id="errorNom" class="text-red-500 text-xs mt-1"></p>
 				</div>
-				<div class="w-full mb-6 flex flex-col text-davys_gray-700 text-lg">
-					<label for="email" class="mb-1">Email</label>
+				<div class="w-full mb-6 flex flex-col text-lg">
+					<label for="courriel" class="mb-1">Email</label>
 					<input
 						type="email"
-						id="email"
-						name="email"
+						id="courriel"
+						name="courriel"
 						class="w-full h-8 rounded-full bg-steel-blue-backdrop border px-2 border-white z-20 pointer-events-auto focus:outline-none focus:border-saffron focus:border-2"
 					/>
+					<p id="errorCourriel" class="text-red-500 text-xs mt-1"></p>
 				</div>
-				<div class="w-full mb-6 flex flex-col text-davys_gray-700 text-lg">
+				<div class="w-full mb-6 flex flex-col text-lg">
 					<label for="message" class="mb-1">Message</label>
 					<textarea
 						id="message"
@@ -63,7 +95,9 @@
 						class="w-full h-32 bg-steel-blue-backdrop border px-2 border-white z-20 pointer-events-auto focus:outline-none focus:border-saffron focus:border-2"
 						style="resize: none;"
 					></textarea>
+					<p id="errorMessage" class="text-red-500 text-xs mt-1"></p>
 				</div>
+
 				<div class="z-20 pointer-events-auto">
 					<button type="submit" class="btn-style h-fit">Send</button>
 				</div>

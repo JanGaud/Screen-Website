@@ -1,0 +1,53 @@
+{
+	"format": "custom",
+	"id": "form_errors",
+	"label": "Form_Errors",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {
+			"no_name": {
+				"type": "Text",
+				"config": {
+					"label": "No_Name",
+					"placeholder": ""
+				}
+			},
+			"no_email": {
+				"type": "Text",
+				"config": {
+					"label": "No_Email",
+					"placeholder": ""
+				}
+			},
+			"no_message": {
+				"type": "Text",
+				"config": {
+					"label": "No_Message",
+					"placeholder": ""
+				}
+			},
+			"inv_name": {
+				"type": "Text",
+				"config": {
+					"label": "Inv_Name",
+					"placeholder": ""
+				}
+			},
+			"inv_email": {
+				"type": "Text",
+				"config": {
+					"label": "Inv_Email",
+					"placeholder": ""
+				}
+			},
+			"inv_message": {
+				"type": "Text",
+				"config": {
+					"label": "Inv_Message",
+					"placeholder": ""
+				}
+			}
+		}
+	}
+}
