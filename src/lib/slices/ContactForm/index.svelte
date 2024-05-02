@@ -20,11 +20,6 @@
 			return;
 		}
 		const isValid = await validateForm(form);
-		if (isValid) {
-			console.log('Form is valid and has been submitted!');
-		} else {
-			console.log('Validation failed');
-		}
 	}
 </script>
 
@@ -64,7 +59,7 @@
 			bind:this={form}
 			id={slice.primary.link_url}
 			novalidate
-			class="w-full h-full overflow-hidden flex flex-col items-start"
+			class="w-full h-full flex flex-col items-start"
 		>
 			<div class="w-full flex flex-col items-start text-davys_gray-700 text-lg">
 				<div class="w-full mb-6 z-20 pointer-events-auto">
