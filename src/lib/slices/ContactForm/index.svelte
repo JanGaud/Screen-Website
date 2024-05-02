@@ -35,7 +35,7 @@
 				{slice.primary.title}
 			</h2>
 		</div>
-		<form class="w-full h-full flex flex-col items-start" action="post">
+		<form id={slice.primary.link_url} class="w-full h-full flex flex-col items-start" action="post">
 			<div class="w-full flex flex-col items-start text-davys_gray-700 text-lg">
 				<div class="w-full mb-6 flex flex-col text-lg">
 					<label for="name" class="mb-1">Name</label>
