@@ -2,6 +2,7 @@
 	import Spotlight from '$lib/components/decorations/Spotlight.svelte';
 	import { PrismicImage } from '@prismicio/svelte';
 	import { validateForm } from '../../../utils/formValidator'; // Make sure the path is correct
+	import { onMount } from 'svelte';
 
 	/** @type {import("@prismicio/client").Content.ContactFormSlice} */
 	export let slice;
@@ -21,6 +22,35 @@
 		}
 		const isValid = await validateForm(form);
 	}
+
+	/**
+	 * @type {HTMLElement}
+	 */
+	let titleAnimation;
+
+	onMount(async () => {
+		const gsapModule = await import('gsap');
+		const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+
+		gsapModule.gsap.registerPlugin(ScrollTrigger);
+
+		gsapModule.gsap.fromTo(
+			titleAnimation,
+			{ y: 20, opacity: 0, scale: 1.2 },
+			{
+				scrollTrigger: {
+					trigger: titleAnimation,
+					start: 'top center',
+					end: 'center center'
+				},
+				opacity: 1,
+				y: 0,
+				scale: 1,
+				duration: 1,
+				ease: 'elastic.out(1.5, 0.5)'
+			}
+		);
+	});
 </script>
 
 <section
@@ -49,6 +79,7 @@
 		<Spotlight width="400px" position="top-28 left-32" rgb="244, 93, 1" pulsate={true} />
 		<div class="flex justify-center items-center w-full">
 			<h2
+				bind:this={titleAnimation}
 				class="font-bold tracking-tighter my-6 text-4xl lg:text-7xl drop-shadow-lg border-b-8 text-white border-saffron text-center"
 			>
 				{slice.primary.title}
