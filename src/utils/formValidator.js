@@ -63,26 +63,37 @@ export async function validateForm(form) {
         }
     }
 
-//     if (isValid) {
-//         try {
-//             const formData = new FormData(form);
-//             const response = await fetch('https://formspree.io/f/mvoelzzo', {
-//                 method: 'POST',
-//                 body: formData,
-//                 headers: {
-//                     'Accept': 'application/json'
-//                 }
-//             });
+    if (isValid) {
+        const formData = {
+            // @ts-ignore
+            name: nom.value,
+            // @ts-ignore
+            email: courriel.value,
+            // @ts-ignore
+            message: message.value
+        };
 
-//             if (response.ok) {
-//                 console.log('Form submitted successfully');
-//             } else {
-//                 console.error('Form submission failed:', response.statusText);
-//             }
-//         } catch (error) {
-//             console.error('Error submitting form:', error);
-//         }
-//     }
+        fetch('/api/mail', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Form submitted successfully!', data);
+            })
+            .catch(error => {
+                console.error('Error submitting form:', error);
+            });
+    }
+
 
     return isValid;
 }

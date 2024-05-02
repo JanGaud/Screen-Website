@@ -41,8 +41,11 @@
 		"@prismicio/client": "^7.3.1",
 		"@prismicio/svelte": "^1.0.3",
 		"clsx": "^2.1.1",
+		"dotenv": "^16.4.5",
 		"gsap": "^3.12.5",
+		"nodemailer": "^6.9.13",
 		"split-type": "^0.3.4",
+		"svelte-email": "^0.0.4",
 		"three": "^0.162.0",
 		"threejs-toys": "^0.0.8"
 	}

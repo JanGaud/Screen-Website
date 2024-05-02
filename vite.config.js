@@ -8,10 +8,4 @@ export default defineConfig({
 			allow: ['..']
 		}
 	},
-	  ssr: {
-		external: ['gsap']
-	},
-	optimizeDeps: {
-		include: ['gsap', 'gsap/ScrollTrigger']
-	}
 });
