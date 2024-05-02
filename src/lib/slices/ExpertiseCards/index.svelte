@@ -1,6 +1,5 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import gsap from 'gsap';
     import Icon from '@iconify/svelte';
     import type { Content } from '@prismicio/client'; // Adjusted import for typings
 
