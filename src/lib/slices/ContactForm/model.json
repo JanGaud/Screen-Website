@@ -56,6 +56,14 @@
             "placeholder_true": "true",
             "placeholder_false": "false"
           }
+        },
+        "avatar": {
+          "type": "Image",
+          "config": {
+            "label": "Avatar",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {}

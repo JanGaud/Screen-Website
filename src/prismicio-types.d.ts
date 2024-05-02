@@ -631,6 +631,16 @@ export interface ContactFormSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#boolean
 	 */
 	looking_for_work: prismic.BooleanField;
+
+	/**
+	 * Avatar field in *ContactForm → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contact_form.primary.avatar
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	avatar: prismic.ImageField<never>;
 }
 
 /**

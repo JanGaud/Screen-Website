@@ -12,10 +12,10 @@
 	data-slice-variation={slice.variation}
 >
 	<div class="relative h-full w-full overflow-hidden">
-		<div class="absolute w-full h-full flex items-center justify-center bg-davys_gray-100 opacity-75">
-			<div class="w-full mx-10 flex- flex-col gap-4 p-2">
-				<h3 class="text-3xl lg:text-5xl uppercase font-bold drop-shadow">testing this</h3>
-				<p class="text-lg tracking-wider drop-shadow">testing that Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus perferendis facilis magni error blanditiis minima ipsam inventore ab sequi necessitatibus, pariatur vel optio, nostrum eius commodi voluptatibus. Voluptates, sapiente minus?</p>
+		<div class="absolute py-12 text-white w-full h-full flex items-center justify-center bg-davys_gray-100 opacity-75">
+			<div class="w-full mx-10 flex flex-col gap-4 p-2">
+				<h3 class="text-2xl lg:text-5xl uppercase font-bold drop-shadow">{slice.primary.banner_title}</h3>
+				<p class="text-lg tracking-wider drop-shadow">{slice.primary.banner_texte}</p>
 			</div>
 		</div>
 		<PrismicImage class="w-full h-full object-cover" field={slice.primary.letter_image} />
