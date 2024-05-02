@@ -48,21 +48,25 @@
             "placeholder": ""
           }
         },
-        "looking_for_work": {
-          "type": "Boolean",
+        "name_input_label": {
+          "type": "Text",
           "config": {
-            "label": "Looking_For_Work",
-            "default_value": false,
-            "placeholder_true": "true",
-            "placeholder_false": "false"
+            "label": "Name Input Label",
+            "placeholder": ""
           }
         },
-        "avatar": {
-          "type": "Image",
+        "mail_input_label": {
+          "type": "Text",
           "config": {
-            "label": "Avatar",
-            "constraint": {},
-            "thumbnails": []
+            "label": "Mail Input Label",
+            "placeholder": ""
+          }
+        },
+        "message_input_label": {
+          "type": "Text",
+          "config": {
+            "label": "Message Input Label",
+            "placeholder": ""
           }
         }
       },

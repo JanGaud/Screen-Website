@@ -119,7 +119,6 @@ h6 {
     /* Track */
     ::-webkit-scrollbar-track {
         background: #000000;
-        border-radius: 10px;
     }
 
     /* Handle */

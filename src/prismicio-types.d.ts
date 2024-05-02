@@ -709,25 +709,34 @@ export interface ContactFormSliceDefaultPrimary {
 	banner_texte: prismic.KeyTextField;
 
 	/**
-	 * Looking_For_Work field in *ContactForm → Primary*
+	 * Name Input Label field in *ContactForm → Primary*
 	 *
-	 * - **Field Type**: Boolean
+	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **Default Value**: false
-	 * - **API ID Path**: contact_form.primary.looking_for_work
-	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 * - **API ID Path**: contact_form.primary.name_input_label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
-	looking_for_work: prismic.BooleanField;
+	name_input_label: prismic.KeyTextField;
 
 	/**
-	 * Avatar field in *ContactForm → Primary*
+	 * Mail Input Label field in *ContactForm → Primary*
 	 *
-	 * - **Field Type**: Image
+	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: contact_form.primary.avatar
-	 * - **Documentation**: https://prismic.io/docs/field#image
+	 * - **API ID Path**: contact_form.primary.mail_input_label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
-	avatar: prismic.ImageField<never>;
+	mail_input_label: prismic.KeyTextField;
+
+	/**
+	 * Message Input Label field in *ContactForm → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contact_form.primary.message_input_label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	message_input_label: prismic.KeyTextField;
 }
 
 /**

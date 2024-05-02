@@ -64,7 +64,7 @@
 			<div class="w-full flex flex-col items-start text-davys_gray-700 text-lg">
 				<div class="w-full mb-6 z-20 pointer-events-auto">
 					<div class="flex items-center justify-between">
-						<label for="nom" class="mb-1 flex-1">Name</label>
+						<label for="nom" class="mb-1 flex-1">{slice.primary.name_input_label}</label>
 						<p id="errorNom" class="text-red-500 text-xs ml-4"></p>
 					</div>
 					<input
@@ -76,7 +76,7 @@
 				</div>
 				<div class="w-full mb-6 z-20 pointer-events-auto">
 					<div class="flex items-center justify-between">
-						<label for="courriel" class="mb-1 flex-1">Email</label>
+						<label for="courriel" class="mb-1 flex-1">{slice.primary.mail_input_label}</label>
 						<p id="errorCourriel" class="text-red-500 text-xs ml-4"></p>
 					</div>
 					<input
@@ -88,7 +88,7 @@
 				</div>
 				<div class="w-full mb-6 z-20 pointer-events-auto">
 					<div class="flex items-center justify-between">
-						<label for="message" class="mb-1 flex-1">Message</label>
+						<label for="message" class="mb-1 flex-1">{slice.primary.message_input_label}</label>
 						<p id="errorMessage" class="text-red-500 text-xs ml-4"></p>
 					</div>
 					<textarea

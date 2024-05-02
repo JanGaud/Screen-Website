@@ -46,30 +46,20 @@
 				"value": "correct",
 				"type": "Text"
 			},
-			"looking_for_work": {
-				"__TYPE__": "BooleanContent",
-				"value": true
+			"name_input_label": {
+				"__TYPE__": "FieldContent",
+				"value": "other",
+				"type": "Text"
 			},
-			"avatar": {
-				"__TYPE__": "ImageContent",
-				"origin": {
-					"id": "main",
-					"url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-					"width": 4076,
-					"height": 2712
-				},
-				"url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-				"width": 4076,
-				"height": 2712,
-				"edit": {
-					"zoom": 1,
-					"crop": {
-						"x": 0,
-						"y": 0
-					},
-					"background": "transparent"
-				},
-				"thumbnails": {}
+			"mail_input_label": {
+				"__TYPE__": "FieldContent",
+				"value": "blue",
+				"type": "Text"
+			},
+			"message_input_label": {
+				"__TYPE__": "FieldContent",
+				"value": "mother",
+				"type": "Text"
 			}
 		},
 		"items": [
