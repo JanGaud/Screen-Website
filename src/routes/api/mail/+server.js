@@ -9,7 +9,7 @@ export async function POST({ request }) {
         const formData = await request.json();
 
         const transporter = nodemailer.createTransport({
-            service: 'gmail', 
+            service: 'gmail',
             auth: {
                 user: process.env.EMAIL_USER,
                 pass: process.env.EMAIL_PASS
@@ -17,15 +17,17 @@ export async function POST({ request }) {
         });
 
         const mailOptions = {
-            from: process.env.EMAIL_USER,
-            to: formData.email,
+            from: formData.email,
+            to: process.env.EMAIL_USER,
             subject: 'Formulaire de contact Janis Gaudreault.com',
             text: `${formData.name}: ${formData.message}`,
-            html: `<p>Nouveau message de mon portfolio:<strong>${formData.name}</strong>:</p><p>${formData.message}</p>` 
+            html: `<p>Nouveau message de mon portfolio:<strong>${formData.name} : ${formData.email}</strong>:</p><p>${formData.message}</p>`
         };
+
         const info = await transporter.sendMail(mailOptions);
+        return json({ success: true, message: 'Email sent successfully', info: info }, { status: 200 });
+
     } catch (error) {
-        // @ts-ignore
         return json({ success: false, message: 'Failed to send email', error: error.message }, { status: 500 });
     }
 }
