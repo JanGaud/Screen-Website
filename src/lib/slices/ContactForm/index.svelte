@@ -64,38 +64,44 @@
 			bind:this={form}
 			id={slice.primary.link_url}
 			novalidate
-			class="w-full h-full flex flex-col items-start"
+			class="w-full h-full overflow-hidden flex flex-col items-start"
 		>
 			<div class="w-full flex flex-col items-start text-davys_gray-700 text-lg">
-				<div class="w-full mb-6 flex flex-col text-lg">
-					<label for="nom" class="mb-1">Name</label>
+				<div class="w-full mb-6 z-20 pointer-events-auto">
+					<div class="flex items-center justify-between">
+						<label for="nom" class="mb-1 flex-1">Name</label>
+						<p id="errorNom" class="text-red-500 text-xs ml-4"></p>
+					</div>
 					<input
 						type="text"
 						id="nom"
 						name="nom"
 						class="w-full h-8 rounded-full bg-steel-blue-backdrop border px-2 border-white z-20 pointer-events-auto focus:outline-none focus:border-saffron focus:border-2"
 					/>
-					<p id="errorNom" class="text-red-500 text-xs mt-1"></p>
 				</div>
-				<div class="w-full mb-6 flex flex-col text-lg">
-					<label for="courriel" class="mb-1">Email</label>
+				<div class="w-full mb-6 z-20 pointer-events-auto">
+					<div class="flex items-center justify-between">
+						<label for="courriel" class="mb-1 flex-1">Email</label>
+						<p id="errorCourriel" class="text-red-500 text-xs ml-4"></p>
+					</div>
 					<input
 						type="email"
 						id="courriel"
 						name="courriel"
 						class="w-full h-8 rounded-full bg-steel-blue-backdrop border px-2 border-white z-20 pointer-events-auto focus:outline-none focus:border-saffron focus:border-2"
 					/>
-					<p id="errorCourriel" class="text-red-500 text-xs mt-1"></p>
 				</div>
-				<div class="w-full mb-6 flex flex-col text-lg">
-					<label for="message" class="mb-1">Message</label>
+				<div class="w-full mb-6 z-20 pointer-events-auto">
+					<div class="flex items-center justify-between">
+						<label for="message" class="mb-1 flex-1">Message</label>
+						<p id="errorMessage" class="text-red-500 text-xs ml-4"></p>
+					</div>
 					<textarea
 						id="message"
 						name="message"
 						class="w-full h-32 bg-steel-blue-backdrop border px-2 border-white z-20 pointer-events-auto focus:outline-none focus:border-saffron focus:border-2"
 						style="resize: none;"
 					></textarea>
-					<p id="errorMessage" class="text-red-500 text-xs mt-1"></p>
 				</div>
 
 				<div class="z-20 pointer-events-auto">
