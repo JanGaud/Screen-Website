@@ -31,8 +31,8 @@
 </script>
 
 <footer class="z-50 flex flex-col items-center pointer-events-auto max-w-screen-2xl mx-auto">
-	<div class="container">
-		<div class="mb-6 flex justify-center space-x-2">
+	<div class="container bg-davys_gray-800 dark:bg-davys_gray-200">
+		<div class="py-4 flex justify-center items-center space-x-2">
 			{#each socials as { social_link, social_icon }}
 				<PrismicLink
 					field={social_link}
