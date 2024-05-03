@@ -140,7 +140,7 @@
 							></textarea>
 						</div>
 
-						<div class="w-full flex justify-center md:justify-start z-20 pointer-events-auto">
+						<div class="w-full md:w-fit flex justify-center md:justify-start z-20 pointer-events-auto">
 							<button type="submit" class="btn-style h-fit"
 								>{slice.primary.send_button_label}</button
 							>
