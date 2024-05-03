@@ -40,7 +40,7 @@
 	});
 </script>
 
-<div class="h-full flex justify-center items-center px-16">
+<div class="h-full z-30 flex justify-center items-center px-2 md:px-16">
 	<Spotlight width="400px" position="top-28 left-32" rgb="244, 93, 1" pulsate={true} />
 	<div class="h-[300px] w-full flex flex-col gap-8 items-center justify-center">
 		<div class="h-1/3">
