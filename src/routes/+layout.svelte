@@ -1,6 +1,6 @@
 <script>
 	import ProgressBar from '$lib/components/ProgressBar.svelte';
-	import '../app.css'; // Make sure this CSS file contains responsive design principles
+	import '../app.css';
 	import { PrismicPreview } from '@prismicio/svelte/kit';
 	import { page } from '$app/stores';
 	import { repositoryName } from '$lib/prismicio';
