@@ -55,6 +55,55 @@
 					"label": "Legal Mention",
 					"placeholder": ""
 				}
+			},
+			"city": {
+				"type": "Text",
+				"config": {
+					"label": "City",
+					"placeholder": ""
+				}
+			},
+			"region": {
+				"type": "Text",
+				"config": {
+					"label": "Region",
+					"placeholder": ""
+				}
+			},
+			"email": {
+				"type": "Text",
+				"config": {
+					"label": "Email",
+					"placeholder": ""
+				}
+			},
+			"job_title": {
+				"type": "Text",
+				"config": {
+					"label": "Job Title",
+					"placeholder": ""
+				}
+			},
+			"name": {
+				"type": "Text",
+				"config": {
+					"label": "Name",
+					"placeholder": ""
+				}
+			},
+			"phone_number": {
+				"type": "Text",
+				"config": {
+					"label": "Phone Number",
+					"placeholder": ""
+				}
+			},
+			"site_url": {
+				"type": "Text",
+				"config": {
+					"label": "Site URL",
+					"placeholder": ""
+				}
 			}
 		}
 	}

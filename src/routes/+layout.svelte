@@ -35,6 +35,8 @@
             progress.set(100);
         }, totalTime);
     });
+
+    console.log($page.data.settings.data);
 </script>
 
 <svelte:head>
@@ -62,3 +64,21 @@
 {/if}
 <MouseFxBg />
 <PrismicPreview {repositoryName} />
+
+
+{@html `<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "${$page.data.settings.data.city}",
+    "addressRegion": "${$page.data.settings.data.region}",
+  },
+  "email": "${$page.data.settings.data.company_email}",
+  "jobTitle": "${$page.data.settings.data.job_title}",
+  "name": "${$page.data.settings.data.name}",
+  "url": "${$page.data.settings.data.site_url}"
+}
+</script>
+`}
