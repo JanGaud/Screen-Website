@@ -68,6 +68,20 @@
             "label": "Message Input Label",
             "placeholder": ""
           }
+        },
+        "send_button_label": {
+          "type": "Text",
+          "config": {
+            "label": "Send Button Label",
+            "placeholder": ""
+          }
+        },
+        "success_message": {
+          "type": "Text",
+          "config": {
+            "label": "Success Message",
+            "placeholder": ""
+          }
         }
       },
       "items": {}

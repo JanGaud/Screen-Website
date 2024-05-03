@@ -60,6 +60,16 @@
 				"__TYPE__": "FieldContent",
 				"value": "mother",
 				"type": "Text"
+			},
+			"send_button_label": {
+				"__TYPE__": "FieldContent",
+				"value": "chicken",
+				"type": "Text"
+			},
+			"success_message": {
+				"__TYPE__": "FieldContent",
+				"value": "spend",
+				"type": "Text"
 			}
 		},
 		"items": [

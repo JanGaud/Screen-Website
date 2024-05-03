@@ -1,8 +1,10 @@
 <script>
+	import { writable } from 'svelte/store';
 	import Spotlight from '$lib/components/decorations/Spotlight.svelte';
 	import { PrismicImage } from '@prismicio/svelte';
-	import { validateForm } from '../../../utils/formValidator'; // Make sure the path is correct
+	import { validateForm } from '../../../utils/formValidator';
 	import { onMount } from 'svelte';
+	import SubmittedForm from '$lib/components/decorations/SubmittedForm.svelte';
 
 	/** @type {import("@prismicio/client").Content.ContactFormSlice} */
 	export let slice;
@@ -10,6 +12,8 @@
 	 * @type {HTMLFormElement}
 	 */
 	let form;
+
+	let formStatus = writable(false);
 
 	/**
 	 * @param {{ preventDefault: () => void; }} event
@@ -21,6 +25,9 @@
 			return;
 		}
 		const isValid = await validateForm(form);
+		if (isValid) {
+			formStatus.set(true);
+		}
 	}
 
 	/**
@@ -75,65 +82,88 @@
 		<PrismicImage class="w-full h-full object-cover" field={slice.primary.letter_image} />
 	</div>
 
-	<div class="relative overflow-hidden w-full px-2 md:px-20 py-14">
-		<Spotlight width="400px" position="top-28 left-32" rgb="244, 93, 1" pulsate={true} />
-		<div class="flex justify-center items-center w-full">
-			<h2
-				bind:this={titleAnimation}
-				class="font-bold tracking-tighter my-6 text-4xl lg:text-7xl drop-shadow-lg border-b-8 text-white border-saffron text-center"
-			>
-				{slice.primary.title}
-			</h2>
-		</div>
-		<form
-			on:submit={handleSubmit}
-			bind:this={form}
-			id={slice.primary.link_url}
-			novalidate
-			class="w-full h-full flex flex-col items-start"
-		>
-			<div class="w-full flex flex-col items-start text-davys_gray-700 text-lg">
-				<div class="w-full mb-6 z-20 pointer-events-auto">
-					<div class="flex items-center justify-between">
-						<label for="nom" class="mb-1 flex-1">{slice.primary.name_input_label}</label>
-						<p id="errorNom" class="text-red-500 text-xs ml-4"></p>
-					</div>
-					<input
-						type="text"
-						id="nom"
-						name="nom"
-						class="w-full h-8 rounded-full bg-steel-blue-backdrop border px-2 border-white z-20 pointer-events-auto focus:outline-none focus:border-saffron focus:border-2"
-					/>
+	<div class="relative overflow-hidden w-full h-full px-2 md:px-20 py-14">
+		{#if $formStatus}<SubmittedForm message={slice.primary.success_message || 'Message sent!'} />
+		{:else}
+			<div class:fadeOut={$formStatus} class="w-full">
+				<Spotlight width="400px" position="top-28 left-32" rgb="244, 93, 1" pulsate={true} />
+				<div class="flex justify-center items-center w-full">
+					<h2
+						bind:this={titleAnimation}
+						class="font-bold tracking-tighter my-6 text-4xl lg:text-7xl drop-shadow-lg border-b-8 text-white border-saffron text-center"
+					>
+						{slice.primary.title}
+					</h2>
 				</div>
-				<div class="w-full mb-6 z-20 pointer-events-auto">
-					<div class="flex items-center justify-between">
-						<label for="courriel" class="mb-1 flex-1">{slice.primary.mail_input_label}</label>
-						<p id="errorCourriel" class="text-red-500 text-xs ml-4"></p>
-					</div>
-					<input
-						type="email"
-						id="courriel"
-						name="courriel"
-						class="w-full h-8 rounded-full bg-steel-blue-backdrop border px-2 border-white z-20 pointer-events-auto focus:outline-none focus:border-saffron focus:border-2"
-					/>
-				</div>
-				<div class="w-full mb-6 z-20 pointer-events-auto">
-					<div class="flex items-center justify-between">
-						<label for="message" class="mb-1 flex-1">{slice.primary.message_input_label}</label>
-						<p id="errorMessage" class="text-red-500 text-xs ml-4"></p>
-					</div>
-					<textarea
-						id="message"
-						name="message"
-						class="w-full h-32 bg-steel-blue-backdrop border px-2 border-white z-20 pointer-events-auto focus:outline-none focus:border-saffron focus:border-2"
-						style="resize: none;"
-					></textarea>
-				</div>
+				<form
+					on:submit={handleSubmit}
+					bind:this={form}
+					id={slice.primary.link_url}
+					novalidate
+					class="w-full h-full flex flex-col items-start"
+				>
+					<div class="w-full flex flex-col items-start text-davys_gray-700 text-lg">
+						<div class="w-full mb-6 z-20 pointer-events-auto">
+							<div class="flex items-center justify-between">
+								<label for="nom" class="mb-1 flex-1">{slice.primary.name_input_label}</label>
+								<p id="errorNom" class="text-red-500 text-xs ml-4"></p>
+							</div>
+							<input
+								type="text"
+								id="nom"
+								name="nom"
+								class="w-full h-8 rounded-full bg-steel-blue-backdrop border px-2 border-white z-20 pointer-events-auto focus:outline-none focus:border-saffron focus:border-2"
+							/>
+						</div>
+						<div class="w-full mb-6 z-20 pointer-events-auto">
+							<div class="flex items-center justify-between">
+								<label for="courriel" class="mb-1 flex-1">{slice.primary.mail_input_label}</label>
+								<p id="errorCourriel" class="text-red-500 text-xs ml-4"></p>
+							</div>
+							<input
+								type="email"
+								id="courriel"
+								name="courriel"
+								class="w-full h-8 rounded-full bg-steel-blue-backdrop border px-2 border-white z-20 pointer-events-auto focus:outline-none focus:border-saffron focus:border-2"
+							/>
+						</div>
+						<div class="w-full mb-6 z-20 pointer-events-auto">
+							<div class="flex items-center justify-between">
+								<label for="message" class="mb-1 flex-1">{slice.primary.message_input_label}</label>
+								<p id="errorMessage" class="text-red-500 text-xs ml-4"></p>
+							</div>
+							<textarea
+								id="message"
+								name="message"
+								class="w-full h-32 bg-steel-blue-backdrop border px-2 border-white z-20 pointer-events-auto focus:outline-none focus:border-saffron focus:border-2"
+								style="resize: none;"
+							></textarea>
+						</div>
 
-				<div class="w-full flex justify-center md:justify-start z-20 pointer-events-auto">
-					<button type="submit" class="btn-style h-fit">Send</button>
-				</div>
+						<div class="w-full flex justify-center md:justify-start z-20 pointer-events-auto">
+							<button type="submit" class="btn-style h-fit"
+								>{slice.primary.send_button_label}</button
+							>
+						</div>
+					</div>
+				</form>
 			</div>
-		</form>
+		{/if}
 	</div>
 </section>
+
+<style>
+	.fadeOut {
+		animation: fadeOutAnimation 1s ease forwards;
+	}
+
+	@keyframes fadeOutAnimation {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+</style>

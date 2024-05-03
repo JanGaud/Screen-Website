@@ -737,6 +737,26 @@ export interface ContactFormSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	message_input_label: prismic.KeyTextField;
+
+	/**
+	 * Send Button Label field in *ContactForm → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contact_form.primary.send_button_label
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	send_button_label: prismic.KeyTextField;
+
+	/**
+	 * Success Message field in *ContactForm → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: contact_form.primary.success_message
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	success_message: prismic.KeyTextField;
 }
 
 /**
