@@ -626,16 +626,6 @@ export interface BentoSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	url_id: prismic.KeyTextField;
-
-	/**
-	 * Bg_Img field in *Bento → Primary*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: bento.primary.bg_img
-	 * - **Documentation**: https://prismic.io/docs/field#image
-	 */
-	bg_img: prismic.ImageField<never>;
 }
 
 /**
@@ -661,16 +651,6 @@ export interface BentoSliceDefaultItem {
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
 	body: prismic.RichTextField;
-
-	/**
-	 * Image field in *Bento → Items*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: bento.items[].image
-	 * - **Documentation**: https://prismic.io/docs/field#image
-	 */
-	image: prismic.ImageField<never>;
 
 	/**
 	 * Link field in *Bento → Items*
@@ -986,16 +966,6 @@ export interface HeroSliceDefaultPrimary {
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	what_i_do: prismic.KeyTextField;
-
-	/**
-	 * Text Texture Img field in *Hero → Primary*
-	 *
-	 * - **Field Type**: Image
-	 * - **Placeholder**: *None*
-	 * - **API ID Path**: hero.primary.text_texture_img
-	 * - **Documentation**: https://prismic.io/docs/field#image
-	 */
-	text_texture_img: prismic.ImageField<never>;
 
 	/**
 	 * CTA Label field in *Hero → Primary*

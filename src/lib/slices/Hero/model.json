@@ -26,14 +26,6 @@
             "placeholder": ""
           }
         },
-        "text_texture_img": {
-          "type": "Image",
-          "config": {
-            "label": "Text Texture Img",
-            "constraint": {},
-            "thumbnails": []
-          }
-        },
         "cta_label": {
           "type": "Text",
           "config": {
