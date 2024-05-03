@@ -1,6 +1,5 @@
 <script>
 // @ts-nocheck
-
 	import Spotlight from '$lib/components/decorations/Spotlight.svelte';
 	import Icon from '@iconify/svelte';
 	import { PrismicRichText } from '@prismicio/svelte';
