@@ -60,14 +60,14 @@
 			<div
 				bind:this={cards[i]}
 				class={clsx(
-					'card relative md:h-[320px] flex flex-col justify-between border border-davys_gray-100 dark:border-white shadow-md bg-white-backdrop dark:bg-steel-blue-backdrop overflow-hidden',
+					'card relative md:h-[375px] flex flex-col justify-between border border-davys_gray-100 dark:border-white shadow-md bg-white-backdrop dark:bg-steel-blue-backdrop overflow-hidden',
 					item.wide ? 'md:col-span-2' : 'md:col-span-1'
 				)}
 			>
 				<div class="z-30 p-4">
 					<h3 class="text-2xl mb-4">{item.title}</h3>
 					<div
-						class="max-w-md min-h-36 line-clamp-3 overflow-hidden text-balance text-gray-500 dark:text-davys_gray-700"
+						class="max-w-md min-h-36 line-clamp-3 md:line-clamp-5 lg:line-clamp-[10] overflow-clip text-balance text-gray-500 dark:text-davys_gray-700"
 					>
 						<PrismicRichText field={item.body} />
 					</div>
