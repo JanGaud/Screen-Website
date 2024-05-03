@@ -1,8 +1,11 @@
 <script>
+// @ts-nocheck
+
 	import Spotlight from '$lib/components/decorations/Spotlight.svelte';
 	import Icon from '@iconify/svelte';
 	import { PrismicRichText } from '@prismicio/svelte';
 	import { onMount } from 'svelte';
+	import formatDate from '../../../utils/dateParser';
 
 	/** @type {import("@prismicio/client").Content.AboutSlice} */
 	export let slice;
@@ -61,7 +64,7 @@
 				<ol class="h-full flex flex-col gap-10">
 					{#each slice.items as item}
 						<li class="flex flex-col gap-1">
-							<small class="text-left text-yellow_green font-semibold">{item.date_start}</small>
+							<small class="text-left text-yellow_green font-semibold">{formatDate(item.date_start)}</small>
 							<div class="flex flex-col gap-4 border-l pl-5 py-4">
 								<div>
 									<h3 class="text-xl font-bold uppercase">{item.company_name}</h3>
@@ -69,7 +72,7 @@
 								</div>
 								<p class="text-sm">{item.description}</p>
 							</div>
-							<small class="text-left text-persimmon font-semibold">{item.date_end}</small>
+							<small class="text-left text-persimmon font-semibold">{formatDate(item.date_end)}</small>
 						</li>
 					{/each}
 				</ol>
