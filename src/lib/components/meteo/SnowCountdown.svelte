@@ -67,7 +67,7 @@
 	});
 </script>
 
-<div class="p-2 mb-2 flex items-center gap-4 border rounded-md shadow-md text-sm md:text-lg overflow-hidden">
+<div class="bg-white-backdrop dark:bg-steel-blue-backdrop p-2 mb-2 flex items-center gap-4 border rounded-md shadow-md text-sm md:text-lg overflow-hidden">
 	{#if nextSnowTime}
 		<Icon class="w-6 h-6 text-brand-blue shrink-0" icon="ion:snow" />
 		<p class="text-brand-darkBlue flex-1 min-w-0">
