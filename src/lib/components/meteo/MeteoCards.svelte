@@ -38,7 +38,7 @@
 <div class="w-full h-fit rounded-lg mt-2 shadow-inner">
 	<div class="flex items-center overflow-x-auto snap-x snap-mandatory">
 		{#each forecasts as forecast (forecast.dt)}
-			<div class="bg-white-backdrop dark:bg-steel-blue-backdrop snap-center shrink-0 w-[192px] max-h-28 min-h-28 p-1 m-2 rounded-lg backdrop-blur-md shadow-md md:hover:scale-105 transition-all">
+			<div class="bg-white-backdrop border z-30 pointer-events-auto dark:bg-steel-blue-backdrop snap-center shrink-0 w-[192px] max-h-28 min-h-28 p-1 m-2 rounded-lg backdrop-blur-md shadow-md md:hover:scale-105 transition-all">
 				<div class="flex justify-between items-center">
 					<div class="flex flex-col gap-4">
 						<div>

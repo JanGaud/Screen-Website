@@ -1157,6 +1157,21 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<'hero', HeroSliceVariation>;
 
 /**
+ * Primary content in *Meteo → Primary*
+ */
+export interface MeteoSliceDefaultPrimary {
+	/**
+	 * Title field in *Meteo → Primary*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: meteo.primary.title
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	title: prismic.KeyTextField;
+}
+
+/**
  * Default variation for Meteo Slice
  *
  * - **API ID**: `default`
@@ -1165,7 +1180,7 @@ export type HeroSlice = prismic.SharedSlice<'hero', HeroSliceVariation>;
  */
 export type MeteoSliceDefault = prismic.SharedSliceVariation<
 	'default',
-	Record<string, never>,
+	Simplify<MeteoSliceDefaultPrimary>,
 	never
 >;
 
@@ -1288,6 +1303,7 @@ declare module '@prismicio/client' {
 			HeroSliceVariation,
 			HeroSliceDefault,
 			MeteoSlice,
+			MeteoSliceDefaultPrimary,
 			MeteoSliceVariation,
 			MeteoSliceDefault,
 			TechListSlice,
