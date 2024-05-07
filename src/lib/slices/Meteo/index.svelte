@@ -5,7 +5,7 @@
 </script>
 
 <section 
-class="relative my-12 lg:my-28 pointer-events-auto z-30"
+class="relative my-28 pointer-events-auto z-30"
 data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
 	<MeteoContainer />
 </section>

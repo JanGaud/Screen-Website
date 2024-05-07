@@ -5,7 +5,6 @@
 	import { geWeatherBackground as weatherBG} from '../../../utils/getWeatherBackground';
 	import Clock from '$lib/components/meteo/Clock.svelte';
 	import MeteoCards from '$lib/components/meteo/MeteoCards.svelte';
-	import CountDownSnow from '$lib/components/meteo/SnowCountdown.svelte';
 	import MeteoGhostCard from '$lib/components/meteo/MeteoSkeleton.svelte';
 	import MeteoIcon from '$lib/components/meteo/MeteoIcon.svelte';
 	import DateToday from '$lib/components/meteo/DateToday.svelte';
@@ -139,7 +138,6 @@
 {:else if error}
 	<p>Error: {error}</p>
 {:else if weatherData}
-	<CountDownSnow forecasts={weatherData.list} />
 	<div
 		class="relative w-full h-60 flex flex-col rounded-lg shadow-inner z-30 pointer-events-auto"
 		style="background: {backgroundColor}"
