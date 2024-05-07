@@ -5,11 +5,75 @@ import type * as prismic from '@prismicio/client';
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
- * Content for Form_Errors documents
+ * Content for errors documents
+ */
+interface ErrorsDocumentData {
+	/**
+	 * Not Found Text field in *errors*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: errors.not_found_text
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	not_found_text: prismic.KeyTextField;
+
+	/**
+	 * Other Error Text field in *errors*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: errors.other_error_text
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	other_error_text: prismic.KeyTextField;
+
+	/**
+	 * CTA Link field in *errors*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: errors.cta_link
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	cta_link: prismic.LinkField;
+
+	/**
+	 * CTA Label field in *errors*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: errors.cta_label
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	cta_label: prismic.KeyTextField;
+}
+
+/**
+ * errors document from Prismic
+ *
+ * - **API ID**: `errors`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ErrorsDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+	Simplify<ErrorsDocumentData>,
+	'errors',
+	Lang
+>;
+
+/**
+ * Content for form_errors documents
  */
 interface FormErrorsDocumentData {
 	/**
-	 * No_Name field in *Form_Errors*
+	 * No_Name field in *form_errors*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -20,7 +84,7 @@ interface FormErrorsDocumentData {
 	no_name: prismic.KeyTextField;
 
 	/**
-	 * No_Email field in *Form_Errors*
+	 * No_Email field in *form_errors*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -31,7 +95,7 @@ interface FormErrorsDocumentData {
 	no_email: prismic.KeyTextField;
 
 	/**
-	 * No_Message field in *Form_Errors*
+	 * No_Message field in *form_errors*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -42,7 +106,7 @@ interface FormErrorsDocumentData {
 	no_message: prismic.KeyTextField;
 
 	/**
-	 * Inv_Name field in *Form_Errors*
+	 * Inv_Name field in *form_errors*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -53,7 +117,7 @@ interface FormErrorsDocumentData {
 	inv_name: prismic.KeyTextField;
 
 	/**
-	 * Inv_Email field in *Form_Errors*
+	 * Inv_Email field in *form_errors*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -64,7 +128,7 @@ interface FormErrorsDocumentData {
 	inv_email: prismic.KeyTextField;
 
 	/**
-	 * Inv_Message field in *Form_Errors*
+	 * Inv_Message field in *form_errors*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
@@ -76,7 +140,7 @@ interface FormErrorsDocumentData {
 }
 
 /**
- * Form_Errors document from Prismic
+ * form_errors document from Prismic
  *
  * - **API ID**: `form_errors`
  * - **Repeatable**: `false`
@@ -470,6 +534,7 @@ export type SocialsDocument<Lang extends string = string> = prismic.PrismicDocum
 >;
 
 export type AllDocumentTypes =
+	| ErrorsDocument
 	| FormErrorsDocument
 	| NavigationDocument
 	| PageDocument
@@ -1077,6 +1142,8 @@ declare module '@prismicio/client' {
 
 	namespace Content {
 		export type {
+			ErrorsDocument,
+			ErrorsDocumentData,
 			FormErrorsDocument,
 			FormErrorsDocumentData,
 			NavigationDocument,

@@ -1,7 +1,7 @@
 {
 	"format": "custom",
 	"id": "form_errors",
-	"label": "Form_Errors",
+	"label": "form_errors",
 	"repeatable": false,
 	"status": true,
 	"json": {

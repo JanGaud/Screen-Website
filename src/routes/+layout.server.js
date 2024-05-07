@@ -1,12 +1,12 @@
 export const prerender = 'auto';
-
 import { createClient } from '$lib/prismicio';
+
 
 // @ts-ignore
 export async function load({ fetch }) {
     const client = createClient({ fetch });
 
-    let nav, settings, social;
+    let nav, settings, social, errors;
 
     try {
         nav = await client.getSingle('navigation');
@@ -29,9 +29,19 @@ export async function load({ fetch }) {
         social = null;
     }
 
+    try {
+        errors = await client.getSingle('errors');
+    } catch (error) {
+        console.error('Failed to fetch errors data from Prismic:', error);
+        error = null;
+    }
+
     return {
         nav,
         settings,
         social,
+        errors
+        
     };
+    
 }

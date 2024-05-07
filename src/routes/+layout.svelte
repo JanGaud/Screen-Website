@@ -35,6 +35,7 @@
 			progress.set(100);
 		}, totalTime);
 	});
+
 </script>
 
 <svelte:head>
