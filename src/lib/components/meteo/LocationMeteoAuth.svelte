@@ -1,7 +1,6 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
 	import CardCarrouselSkeleton from '$lib/components/meteo/CardCarrouselSkeleton.svelte';
-	import SnowCountSkeleton from '$lib/components/meteo/SnowCountSkeleton.svelte';
 
 	const dispatch = createEventDispatcher();
 	/**
@@ -38,7 +37,6 @@
 	}
 </script>
 
-<SnowCountSkeleton />
 <div class="w-full flex flex-col gap-10 h-60 shadow-inner border rounded-2xl">
 	<hgroup class="px-2 py-1 flex text-2xl md:text-4xl bg-[#203a4a4d] backdrop-blur rounded-t-2xl">
 		<h2 class="uppercase pr-2 drop-shadow-lg text-white font-semibold tracking-wider">
