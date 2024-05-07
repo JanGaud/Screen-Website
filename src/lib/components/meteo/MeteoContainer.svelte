@@ -141,7 +141,7 @@
 {:else if weatherData}
 	<CountDownSnow forecasts={weatherData.list} />
 	<div
-		class="w-full h-60 flex flex-col rounded-lg shadow-inner z-30 pointer-events-auto"
+		class="relative w-full h-60 flex flex-col rounded-lg shadow-inner z-30 pointer-events-auto"
 		style="background: {backgroundColor}"
 	>
 		{#if weatherData.list && weatherData.list.length > 0}
