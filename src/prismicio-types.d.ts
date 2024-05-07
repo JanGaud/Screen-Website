@@ -533,13 +533,89 @@ export type SocialsDocument<Lang extends string = string> = prismic.PrismicDocum
 	Lang
 >;
 
+type WidgetsDocumentDataSlicesSlice = MeteoSlice;
+
+/**
+ * Content for Widgets documents
+ */
+interface WidgetsDocumentData {
+	/**
+	 * Title field in *Widgets*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: widgets.title
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	title: prismic.KeyTextField;
+
+	/**
+	 * Slice Zone field in *Widgets*
+	 *
+	 * - **Field Type**: Slice Zone
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: widgets.slices[]
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#slices
+	 */
+	slices: prismic.SliceZone<WidgetsDocumentDataSlicesSlice> /**
+	 * Meta Description field in *Widgets*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A brief summary of the page
+	 * - **API ID Path**: widgets.meta_description
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */;
+	meta_description: prismic.KeyTextField;
+
+	/**
+	 * Meta Image field in *Widgets*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: widgets.meta_image
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#image
+	 */
+	meta_image: prismic.ImageField<never>;
+
+	/**
+	 * Meta Title field in *Widgets*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: A title of the page used for social media and search engines
+	 * - **API ID Path**: widgets.meta_title
+	 * - **Tab**: SEO & Metadata
+	 * - **Documentation**: https://prismic.io/docs/field#key-text
+	 */
+	meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Widgets document from Prismic
+ *
+ * - **API ID**: `widgets`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type WidgetsDocument<Lang extends string = string> = prismic.PrismicDocumentWithoutUID<
+	Simplify<WidgetsDocumentData>,
+	'widgets',
+	Lang
+>;
+
 export type AllDocumentTypes =
 	| ErrorsDocument
 	| FormErrorsDocument
 	| NavigationDocument
 	| PageDocument
 	| SettingsDocument
-	| SocialsDocument;
+	| SocialsDocument
+	| WidgetsDocument;
 
 /**
  * Primary content in *About → Primary*
@@ -1081,6 +1157,33 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<'hero', HeroSliceVariation>;
 
 /**
+ * Default variation for Meteo Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MeteoSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Record<string, never>,
+	never
+>;
+
+/**
+ * Slice variation for *Meteo*
+ */
+type MeteoSliceVariation = MeteoSliceDefault;
+
+/**
+ * Meteo Shared Slice
+ *
+ * - **API ID**: `meteo`
+ * - **Description**: Meteo
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MeteoSlice = prismic.SharedSlice<'meteo', MeteoSliceVariation>;
+
+/**
  * Primary content in *TechList → Items*
  */
 export interface TechListSliceDefaultItem {
@@ -1157,6 +1260,9 @@ declare module '@prismicio/client' {
 			SocialsDocument,
 			SocialsDocumentData,
 			SocialsDocumentDataSocialMedialItem,
+			WidgetsDocument,
+			WidgetsDocumentData,
+			WidgetsDocumentDataSlicesSlice,
 			AllDocumentTypes,
 			AboutSlice,
 			AboutSliceDefaultPrimary,
@@ -1181,6 +1287,9 @@ declare module '@prismicio/client' {
 			HeroSliceDefaultPrimary,
 			HeroSliceVariation,
 			HeroSliceDefault,
+			MeteoSlice,
+			MeteoSliceVariation,
+			MeteoSliceDefault,
 			TechListSlice,
 			TechListSliceDefaultItem,
 			TechListSliceVariation,

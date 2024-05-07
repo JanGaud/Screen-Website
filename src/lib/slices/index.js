@@ -5,6 +5,7 @@ import Bento from './Bento/index.svelte';
 import ContactForm from './ContactForm/index.svelte';
 import ExpertiseCards from './ExpertiseCards/index.svelte';
 import Hero from './Hero/index.svelte';
+import Meteo from './Meteo/index.svelte';
 import TechList from './TechList/index.svelte';
 
 export const components = {
@@ -13,5 +14,6 @@ export const components = {
 	contact_form: ContactForm,
 	expertise_cards: ExpertiseCards,
 	hero: Hero,
+	meteo: Meteo,
 	tech_list: TechList
 };

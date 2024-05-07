@@ -1,0 +1,16 @@
+{
+	"id": "meteo",
+	"type": "SharedSlice",
+	"name": "Meteo",
+	"description": "Meteo",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": ""
+		}
+	]
+}

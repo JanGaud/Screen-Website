@@ -23,9 +23,15 @@ const routes = [
 	},
 	{
 		type: 'page',
+		uid: 'widgets',
+		path: '/widgets'
+	},
+	{
+		type: 'page',
 		path: '/:uid'
 	}
 ];
+
 
 /**
  * Creates a Prismic client for the project's repository. The client is used to
