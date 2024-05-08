@@ -10,6 +10,7 @@
 	import { onMount } from 'svelte';
 	import { writable } from 'svelte/store';
 	import Footer from '$lib/components/Footer.svelte';
+	import LocaleSelect from '$lib/components/LocaleSelect.svelte';
 
 	let isLoading = true;
 	let progress = writable(0);
@@ -56,6 +57,7 @@
 {#if !isLoading}
 	<Navigation />
 	<ThemeToggle />
+	<LocaleSelect />
 	<main
 		class="min-h-screen overflow-x-hidden container max-w-screen-2xl mx-auto px-4 md:px-16 lg:px-20"
 	>
