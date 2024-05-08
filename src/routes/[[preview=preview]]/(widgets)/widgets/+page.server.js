@@ -1,5 +1,5 @@
 // @ts-ignore
-import { NotFoundError, asText } from '@prismicio/client';
+import { NotFoundError } from '@prismicio/client';
 import { createClient } from '$lib/prismicio';
 import { error } from '@sveltejs/kit';
 
