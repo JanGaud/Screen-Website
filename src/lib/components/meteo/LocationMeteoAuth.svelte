@@ -40,11 +40,11 @@
 <div class="w-full flex flex-col gap-10 h-60 shadow-inner border rounded-2xl">
 	<hgroup class="px-2 py-1 flex text-2xl md:text-4xl bg-[#203a4a4d] backdrop-blur rounded-t-2xl">
 		<h2 class="uppercase pr-2 drop-shadow-lg text-white font-semibold tracking-wider">
-			Neige.tech
+			Janis
 		</h2>
 		<h3 class="border-l-4 pl-2 border-gray-500 text-gray-500">Météo</h3>
 	</hgroup>
-	<div class="flex flex-col gap-2 items-center px-2">
+	<div class="flex flex-col gap-2 items-center px-2 z-30 pointer-events-auto">
 		<p class="text-center">
 			Veuillez autoriser l'accès à votre localisation pour activer cette fonctionnalité.
 		</p>
@@ -54,7 +54,7 @@
 					<input
 						type="checkbox"
 						id="geo-switch"
-						class="sr-only"
+						class="sr-only z-30 pointer-events-auto"
 						checked={isSwitchOn}
 						on:change={onToggleChange}
 					/>

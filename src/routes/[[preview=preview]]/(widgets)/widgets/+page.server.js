@@ -9,7 +9,6 @@ export async function load({ fetch, cookies }) {
 
 	try {
 		const page = await client.getByType('widgets');
-		console.log(page.results[0].data);
 
 		if (!page) {
 			throw error(404);
