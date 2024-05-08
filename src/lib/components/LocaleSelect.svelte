@@ -18,6 +18,6 @@
 	bind:value={$selectedLocale}
 	on:change={changeLocale}
 >
-	<option value="fr-CA">Fr</option>
-	<option value="en-US">En</option>
+	<option class="bg-white dark:bg-davys_gray-100" value="fr-CA">Fr</option>
+	<option class="bg-white dark:bg-davys_gray-100" value="en-US">En</option>
 </select>
