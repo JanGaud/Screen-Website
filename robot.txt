@@ -1,0 +1,12 @@
+# Allow all robots complete access, but disallow specific directories
+User-agent: *
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /.env
+
+# Block a specific robot entirely
+User-agent: BadBot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://janisgaudreault.com/sitemap.xml
