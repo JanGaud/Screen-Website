@@ -5,10 +5,6 @@ const config = {
 	kit: {
 		adapter: adapter()
 	},
-	// i18n: {
-	// 	locales: ['en-US', 'fr-CA'],
-	// 	defaultLocale: 'fr-CA',
-	// },
 	preprocess: vitePreprocess()
 };
 export default config;

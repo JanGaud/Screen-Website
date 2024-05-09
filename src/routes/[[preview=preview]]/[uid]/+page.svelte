@@ -3,7 +3,7 @@
 
 	import { components } from '$lib/slices';
 
-	export let data../$types.js;
+	export let data;
 </script>
 
 <SliceZone slices={data.page.data.slices} {components} />
