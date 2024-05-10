@@ -40,7 +40,7 @@
 
 <section
 	id={slice.primary.url_id}
-	class="relative my-12 lg:my-28 z-30 pointer-events-none"
+	class="relative my-12 lg:my-28 z-20 pointer-events-none"
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >

@@ -7,7 +7,10 @@ import { createClient } from '$lib/prismicio';
  */
 export async function validateForm(form) {
     const client = createClient();
-    const response = await client.getAllByType('form_errors');
+
+    const lang = window.location.pathname.startsWith('/en-us') ? 'en-us' : 'fr-ca';
+
+    const response = await client.getAllByType('form_errors', { lang });
     const formErrors = response.length > 0 ? response[0].data : {};
 
     let isValid = true;

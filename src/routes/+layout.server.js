@@ -1,40 +1,40 @@
-export const prerender = 'auto';
-import { page } from '$app/stores';
+// @ts-ignore
 import { createClient } from '$lib/prismicio';
 
-
 // @ts-ignore
-export async function load({ fetch }) {
+export async function load({ fetch, url }) {
     const client = createClient({ fetch });
+
+    const lang = url.pathname.startsWith('/en-us') ? 'en-us' : 'fr-ca';
 
     let nav, settings, social, errors;
 
     try {
-        nav = await client.getSingle('navigation');
+        nav = await client.getSingle('navigation', { lang });
     } catch (error) {
         console.error('Failed to fetch navigation data from Prismic:', error);
-        nav = null; 
+        nav = null;
     }
 
     try {
-        settings = await client.getSingle('settings');
+        settings = await client.getSingle('settings', { lang });
     } catch (error) {
         console.error('Failed to fetch settings data from Prismic:', error);
         settings = null;
     }
 
     try {
-        social = await client.getSingle('socials');
+        social = await client.getSingle('socials', { lang });
     } catch (error) {
         console.error('Failed to fetch socials data from Prismic:', error);
         social = null;
     }
 
     try {
-        errors = await client.getSingle('errors');
+        errors = await client.getSingle('errors', { lang });
     } catch (error) {
         console.error('Failed to fetch errors data from Prismic:', error);
-        error = null;
+        errors = null;
     }
 
     return {
@@ -42,7 +42,5 @@ export async function load({ fetch }) {
         settings,
         social,
         errors
-        
     };
-    
 }
