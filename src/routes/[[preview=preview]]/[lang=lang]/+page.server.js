@@ -9,8 +9,8 @@ export async function load({ fetch, cookies, params }) {
 
 	try {
 		const page = await client.getByUID('page', 'accueil', {
-			lang: params.lang || 'fr-ca'
-		} );
+			lang: params.lang
+		});
 
 		return {
 			page,

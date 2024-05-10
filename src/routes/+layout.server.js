@@ -7,10 +7,6 @@ import { createClient } from '$lib/prismicio';
 export async function load({ fetch }) {
     const client = createClient({ fetch });
 
-    const locale = page;
-
-    console.log('locale', locale);
-
     let nav, settings, social, errors;
 
     try {
