@@ -8,9 +8,9 @@ export async function load({ fetch, cookies, params }) {
 	const client = createClient({ fetch, cookies });
 
 	try {
-		const page = await client.getByUID('page', 'accueil', {
-			lang: params.lang || 'fr-ca'
-		} );
+		const page = await client.getByUID('page', 'home', {
+			lang: params.lang
+		});
 
 		return {
 			page,

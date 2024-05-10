@@ -142,3 +142,17 @@ h6 {
         width: 2px;
     }
 }
+
+
+/* Selector color */
+
+::selection {
+    background-color: #eebb02aa;
+    color: #000;
+}
+
+input::selection,
+textarea::selection {
+    background-color: #eebb02aa;
+    color: #000;
+}
