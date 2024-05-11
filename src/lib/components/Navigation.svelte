@@ -159,7 +159,7 @@
 </header>
 
 <ul
-	class="hidden md:fixed top-24 right-2 md:flex flex-col items-center space-y-4 lg:hidden text-davys_gray dark:text-saffron"
+	class="hidden md:fixed top-24 right-2 md:flex flex-col items-center space-y-4 pointer-events-auto z-30 lg:hidden text-davys_gray dark:text-saffron"
 >
 	{#each socials as { social_link, social_icon }}
 		<li>
