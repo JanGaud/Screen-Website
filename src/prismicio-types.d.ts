@@ -184,6 +184,17 @@ export interface NavigationDocumentDataNavItemItem {
  */
 interface NavigationDocumentData {
 	/**
+	 * Home Logo Link field in *navigation*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: navigation.home_logo_link
+	 * - **Tab**: Main
+	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+	 */
+	home_logo_link: prismic.LinkField;
+
+	/**
 	 * Nav Item field in *navigation*
 	 *
 	 * - **Field Type**: Group

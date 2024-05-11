@@ -26,7 +26,7 @@
 					fetchWeatherData(position.coords.latitude, position.coords.longitude);
 					dispatch('locationGranted');
 				},
-				(err) => {
+				(_err) => {
 					isSwitchOn = false;
 				}
 			);

@@ -23,7 +23,7 @@
 	let isMobileMenuOpen = false;
 	let isHeaderHidden = false;
 	let lastScrollPosition = 0;
-
+	
 	/**
 	 * @param {string} name
 	 */
@@ -38,10 +38,9 @@
 	}
 
 	/**
-	 * @param {{ preventDefault: () => void; stopPropagation: () => void; }} event
+	 * @param {{ preventDefault: () => void; stopPropagation: () => void; }} _event
 	 */
-	function toggleMobileMenu(event) {
-		console.log('Toggling menu');
+	function toggleMobileMenu(_event) {
 		isMobileMenuOpen = !isMobileMenuOpen;
 		if (isMobileMenuOpen) {
 			document.body.style.overflow = 'hidden';
@@ -83,12 +82,12 @@
 		</div>
 
 		<div class="flex md:justify-end lg:justify-center items-center flex-grow w-1/3">
-			<a
-				href="/"
+			<PrismicLink
+				field={$page.data.nav.data.home_logo_link}
 				class="w-[200px] md:w-[160px] h-auto overflow-hidden dark:brightness-100 brightness-0"
 			>
 				<PrismicImage class="object-contain w-full h-auto drop-shadow-lg" field={brandLogo} />
-			</a>
+			</PrismicLink>
 		</div>
 
 		<div class="hidden lg:flex flex-grow w-1/3 justify-end">
@@ -159,7 +158,7 @@
 </header>
 
 <ul
-	class="hidden md:fixed top-24 right-2 md:flex flex-col items-center space-y-4 lg:hidden text-davys_gray dark:text-saffron"
+	class="hidden md:fixed top-24 right-2 md:flex flex-col items-center space-y-4 pointer-events-auto z-30 lg:hidden text-davys_gray dark:text-saffron"
 >
 	{#each socials as { social_link, social_icon }}
 		<li>
