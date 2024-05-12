@@ -49,7 +49,7 @@
 	data-slice-variation={slice.variation}
 >
 	<Spotlight pulsate={true} />
-	<div class="flex flex-wrap">
+	<div class="flex items-center flex-wrap">
 		{#if slice.primary.presentation && slice.primary.what_i_do}
 			<div
 				class="w-full h-full flex flex-col items-center gap-10 md:w-1/2 lg:w-2/3 z-20 pointer-events-none"
