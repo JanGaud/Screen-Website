@@ -52,9 +52,9 @@
 	<div class="flex flex-wrap">
 		{#if slice.primary.presentation && slice.primary.what_i_do}
 			<div
-				class="w-full h-full flex flex-col justify-start items-center gap-10 md:w-1/2 lg:w-2/3 z-20 pointer-events-none"
+				class="w-full h-full flex flex-col items-center gap-10 md:w-1/2 lg:w-2/3 z-20 pointer-events-none"
 			>
-				<hgroup class="text-left flex flex-col gap-4">
+				<hgroup class="w-full text-left flex flex-col gap-4">
 					<h1
 						bind:this={presentationRef}
 						class="font-bold tracking-tighter text-balance text-6xl lg:text-8xl drop-shadow-lg"
