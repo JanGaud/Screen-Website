@@ -716,6 +716,17 @@ export interface AboutSliceDefaultItem {
 	 * - **Documentation**: https://prismic.io/docs/field#date
 	 */
 	date_end: prismic.DateField;
+
+	/**
+	 * Still Working field in *About → Items*
+	 *
+	 * - **Field Type**: Boolean
+	 * - **Placeholder**: *None*
+	 * - **Default Value**: false
+	 * - **API ID Path**: about.items[].still_working
+	 * - **Documentation**: https://prismic.io/docs/field#boolean
+	 */
+	still_working: prismic.BooleanField;
 }
 
 /**

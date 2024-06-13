@@ -71,6 +71,15 @@
             "label": "Date End",
             "placeholder": ""
           }
+        },
+        "still_working": {
+          "type": "Boolean",
+          "config": {
+            "label": "Still Working",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
         }
       }
     }

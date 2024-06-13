@@ -68,6 +68,13 @@
 							"type": "Date",
 							"value": "2019-09-11"
 						}
+					],
+					[
+						"still_working",
+						{
+							"__TYPE__": "BooleanContent",
+							"value": true
+						}
 					]
 				]
 			}
