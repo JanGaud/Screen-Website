@@ -1,4 +1,6 @@
 <script>
+	import { dev } from '$app/environment';
+	import { inject } from '@vercel/analytics';
 	import ProgressBar from '$lib/components/ProgressBar.svelte';
 	import '../app.css';
 	import { PrismicPreview } from '@prismicio/svelte/kit';
@@ -14,6 +16,8 @@
 
 	let isLoading = true;
 	let progress = writable(0);
+
+	inject({ mode: dev ? 'development' : 'production' });
 
 	onMount(() => {
 		let intervalTime = 100;
@@ -36,7 +40,6 @@
 			progress.set(100);
 		}, totalTime);
 	});
-
 </script>
 
 <svelte:head>
