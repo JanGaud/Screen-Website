@@ -61,11 +61,11 @@
 </script>
 
 <section
-	class="-mx-4 md:-mx-16 lg:-mx-20 mt-12 lg:mt-28 grid gap-2 md:grid-cols-2 place-items-center min-h-screen bg-davys_gray-100"
+	class="-mx-4 md:-mx-16 lg:-mx-20 mt-12 lg:mt-28 grid gap-2 md:grid-cols-2 lg:min-h-screen bg-davys_gray-100"
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >
-	<div class="relative h-[500px] md:h-full w-full overflow-hidden">
+	<div class="relative h-[500px] flex items-center md:h-full w-full overflow-hidden">
 		<div class="absolute w-full h-full bg-davys_gray-100 opacity-90 pointer-events-none"></div>
 		<div
 			class="absolute z-30 py-12 text-white w-full h-full flex items-center justify-center pointer-events-none"
@@ -82,7 +82,7 @@
 		<PrismicImage class="w-full h-full object-cover" field={slice.primary.letter_image} />
 	</div>
 
-	<div class="relative overflow-hidden w-full h-full px-2 md:px-20 py-14">
+	<div class="relative overflow-hidden w-full h-full flex items-center px-2 md:px-20 py-14">
 		{#if $formStatus}<SubmittedForm message={slice.primary.success_message || 'Message sent!'} />
 		{:else}
 			<div class:fadeOut={$formStatus} class="w-full">
