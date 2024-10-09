@@ -1,5 +1,5 @@
 <script>
-  import { themeStore } from '../../stores/themeStore.js';
+  import { themeStore } from '../../../stores/themeStore.js';
   import { onMount } from 'svelte';
 
   let isDarkTheme = false;
@@ -15,7 +15,7 @@
   }
 </script>
 
-<label class="fixed bottom-4 left-4 z-30">
+<label class="flex border dark:border-saffron p-1 rounded-full shadow-sm">
   <input class="toggle" type="checkbox" on:click={handleToggle} bind:checked={isDarkTheme}>
 </label>
 

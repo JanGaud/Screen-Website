@@ -7,12 +7,11 @@
 	import { page } from '$app/stores';
 	import { repositoryName } from '$lib/prismicio';
 	import Navigation from '$lib/components/Navigation.svelte';
-	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 	import MouseFxBg from '$lib/components/MouseFxBg.svelte';
 	import { onMount } from 'svelte';
 	import { writable } from 'svelte/store';
 	import Footer from '$lib/components/Footer.svelte';
-	import LocaleSelect from '$lib/components/LocaleSelect.svelte';
+	import SettingsContainer from '$lib/components/settings/SettingsContainer.svelte';
 
 	let isLoading = true;
 	let progress = writable(0);
@@ -59,8 +58,7 @@
 <ProgressBar {isLoading} {progress} />
 {#if !isLoading}
 	<Navigation />
-	<ThemeToggle />
-	<LocaleSelect />
+	<SettingsContainer />
 	<main
 		class="min-h-screen overflow-x-hidden container max-w-screen-2xl mx-auto px-4 md:px-16 lg:px-20"
 	>
