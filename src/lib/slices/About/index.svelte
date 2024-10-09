@@ -48,7 +48,7 @@
 
 <section
 	id={slice.primary.url_id}
-	class="relative my-12 lg:my-28 text-center md:text-left flex justify-center"
+	class="relative my-12 lg:my-28 text-center md:text-left"
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >
@@ -86,7 +86,7 @@
 			<div class="flex flex-wrap justify-center items-center gap-6 lg:col-span-2 order-1 lg:order-none">
 				<div class="flex flex-col items-center lg:items-start gap-4 max-w-[650px]">
 					<Icon class="w-10 h-10 text-saffron" icon="icomoon-free:quotes-left" />
-					<div class="w-full flex flex-col text-center lg:text-left gap-2 md:gap-4 text-balance text-gray-500 dark:text-davys_gray-700 text-lg pl-4">
+					<div class="w-full flex flex-col text-center lg:text-left gap-2 md:gap-4 text-gray-500 dark:text-davys_gray-700 text-lg pl-4">
 						<PrismicRichText field={slice.primary.text} />
 					</div>
 					<Icon class="w-10 h-10 text-saffron" icon="icomoon-free:quotes-right" />
