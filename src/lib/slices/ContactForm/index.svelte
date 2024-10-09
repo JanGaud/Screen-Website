@@ -61,7 +61,7 @@
 </script>
 
 <section
-	class="-mx-4 md:-mx-16 lg:-mx-20 mt-12 lg:mt-28 grid gap-2 md:grid-cols-2 lg:min-h-screen bg-davys_gray-100"
+	class="-mx-4 md:-mx-16 lg:-mx-20 mt-12 lg:mt-28 grid gap-2 md:grid-cols-2 min-h-[800px] bg-davys_gray-100"
 	data-slice-type={slice.slice_type}
 	data-slice-variation={slice.variation}
 >
