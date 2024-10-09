@@ -119,7 +119,10 @@
 			<ul class="w-full mx-auto flex flex-col items-center gap-10 px-4">
 				{#each navItems as { link_label, link_url }}
 					<li>
-						<PrismicLink on:click={toggleMobileMenu} field={link_url} class="active:text-saffron dark:active:text-saffron uppercase tracking-wider drop-shadow-lg transition-colors whitespace-nowrap cursor-pointer">{link_label}</PrismicLink>
+						<!-- Wrap the PrismicLink with a button to trigger the toggleMobileMenu -->
+						<button on:click={toggleMobileMenu} class="w-full">
+							<PrismicLink field={link_url} class="active:text-saffron dark:active:text-saffron uppercase tracking-wider drop-shadow-lg transition-colors whitespace-nowrap cursor-pointer">{link_label}</PrismicLink>
+						</button>
 					</li>
 				{/each}
 			</ul>
@@ -128,9 +131,11 @@
 			<ul class="flex w-full items-center justify-center gap-6">
 				{#each socials as { social_link, social_icon }}
 					<li>
-						<PrismicLink on:click={toggleMobileMenu} field={social_link} class="active:text-saffron dark:active:text-saffron transition-colors cursor-pointer">
-							<Icon class="w-8 h-8 drop-shadow-lg" icon={getSocialIcon(social_icon)} />
-						</PrismicLink>
+						<button on:click={toggleMobileMenu} class="w-full">
+							<PrismicLink field={social_link} class="active:text-saffron dark:active:text-saffron transition-colors cursor-pointer">
+								<Icon class="w-8 h-8 drop-shadow-lg" icon={getSocialIcon(social_icon)} />
+							</PrismicLink>
+						</button>
 					</li>
 				{/each}
 			</ul>
