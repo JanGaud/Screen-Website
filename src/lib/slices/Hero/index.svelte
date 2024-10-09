@@ -57,7 +57,7 @@
 				<hgroup class="w-full text-left flex flex-col gap-4">
 					<h1
 						bind:this={presentationRef}
-						class="font-bold tracking-tighter text-balance text-6xl lg:text-8xl drop-shadow-lg"
+						class="font-bold tracking-tighter text-5xl md:text-6xl lg:text-8xl drop-shadow-lg"
 					>
 						{#each slice.primary.presentation.split(' ') as word, wordIndex}
 							<span>
