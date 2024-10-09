@@ -111,10 +111,10 @@
 	</nav>
 
 	<!-- Sliding Mobile Navigation Drawer (Animated from right) -->
-	<div class="md:hidden h-screen w-full fixed top-20 right-0 bg-white-backdrop dark:bg-steel-blue-backdrop dark:text-white text-davys_gray transform transition-transform duration-300"
+	<div class="md:hidden h-full w-full fixed top-20 right-0 bg-white-backdrop dark:bg-steel-blue-backdrop dark:text-white text-davys_gray transform transition-transform duration-300"
 		class:translate-x-full={!isMobileMenuOpen}
 		class:translate-x-0={isMobileMenuOpen}>
-		<div class="h-full flex flex-col items-center justify-center gap-20 text-2xl uppercase font-bold tracking-wider">
+		<div class="h-full flex flex-col items-center justify-evenly gap-14 text-2xl uppercase font-bold tracking-wider">
 			<!-- Mobile Navigation Links -->
 			<ul class="w-full mx-auto flex flex-col items-center gap-10 px-4">
 				{#each navItems as { link_label, link_url }}
