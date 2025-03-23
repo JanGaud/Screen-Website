@@ -56,7 +56,8 @@
           "config": {
             "label": "Link",
             "placeholder": "",
-            "select": null
+            "select": null,
+            "allowTargetBlank": true
           }
         },
         "cta_label": {

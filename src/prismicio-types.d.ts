@@ -629,35 +629,35 @@ export type AllDocumentTypes =
 	| WidgetsDocument;
 
 /**
- * Primary content in *About → Primary*
+ * Primary content in *About → Default → Primary*
  */
 export interface AboutSliceDefaultPrimary {
 	/**
-	 * Url id field in *About → Primary*
+	 * Url id field in *About → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: about.primary.url_id
+	 * - **API ID Path**: about.default.primary.url_id
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	url_id: prismic.KeyTextField;
 
 	/**
-	 * Title field in *About → Primary*
+	 * Title field in *About → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: about.primary.title
+	 * - **API ID Path**: about.default.primary.title
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	title: prismic.KeyTextField;
 
 	/**
-	 * Text field in *About → Primary*
+	 * Text field in *About → Default → Primary*
 	 *
 	 * - **Field Type**: Rich Text
 	 * - **Placeholder**: Text goes here
-	 * - **API ID Path**: about.primary.text
+	 * - **API ID Path**: about.default.primary.text
 	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
 	 */
 	text: prismic.RichTextField;
@@ -757,35 +757,35 @@ type AboutSliceVariation = AboutSliceDefault;
 export type AboutSlice = prismic.SharedSlice<'about', AboutSliceVariation>;
 
 /**
- * Primary content in *Bento → Primary*
+ * Primary content in *Bento → Default → Primary*
  */
 export interface BentoSliceDefaultPrimary {
 	/**
-	 * Title field in *Bento → Primary*
+	 * Title field in *Bento → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: bento.primary.title
+	 * - **API ID Path**: bento.default.primary.title
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	title: prismic.KeyTextField;
 
 	/**
-	 * text field in *Bento → Primary*
+	 * text field in *Bento → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: bento.primary.text
+	 * - **API ID Path**: bento.default.primary.text
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	text: prismic.KeyTextField;
 
 	/**
-	 * Url id field in *Bento → Primary*
+	 * Url id field in *Bento → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: bento.primary.url_id
+	 * - **API ID Path**: bento.default.primary.url_id
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	url_id: prismic.KeyTextField;
@@ -875,105 +875,105 @@ type BentoSliceVariation = BentoSliceDefault;
 export type BentoSlice = prismic.SharedSlice<'bento', BentoSliceVariation>;
 
 /**
- * Primary content in *ContactForm → Primary*
+ * Primary content in *ContactForm → Default → Primary*
  */
 export interface ContactFormSliceDefaultPrimary {
 	/**
-	 * Link_url field in *ContactForm → Primary*
+	 * Link_url field in *ContactForm → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: contact_form.primary.link_url
+	 * - **API ID Path**: contact_form.default.primary.link_url
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	link_url: prismic.KeyTextField;
 
 	/**
-	 * Title field in *ContactForm → Primary*
+	 * Title field in *ContactForm → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: contact_form.primary.title
+	 * - **API ID Path**: contact_form.default.primary.title
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	title: prismic.KeyTextField;
 
 	/**
-	 * Letter_Image field in *ContactForm → Primary*
+	 * Letter_Image field in *ContactForm → Default → Primary*
 	 *
 	 * - **Field Type**: Image
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: contact_form.primary.letter_image
+	 * - **API ID Path**: contact_form.default.primary.letter_image
 	 * - **Documentation**: https://prismic.io/docs/field#image
 	 */
 	letter_image: prismic.ImageField<never>;
 
 	/**
-	 * Banner_Title field in *ContactForm → Primary*
+	 * Banner_Title field in *ContactForm → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: contact_form.primary.banner_title
+	 * - **API ID Path**: contact_form.default.primary.banner_title
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	banner_title: prismic.KeyTextField;
 
 	/**
-	 * Banner_Texte field in *ContactForm → Primary*
+	 * Banner_Texte field in *ContactForm → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: contact_form.primary.banner_texte
+	 * - **API ID Path**: contact_form.default.primary.banner_texte
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	banner_texte: prismic.KeyTextField;
 
 	/**
-	 * Name Input Label field in *ContactForm → Primary*
+	 * Name Input Label field in *ContactForm → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: contact_form.primary.name_input_label
+	 * - **API ID Path**: contact_form.default.primary.name_input_label
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	name_input_label: prismic.KeyTextField;
 
 	/**
-	 * Mail Input Label field in *ContactForm → Primary*
+	 * Mail Input Label field in *ContactForm → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: contact_form.primary.mail_input_label
+	 * - **API ID Path**: contact_form.default.primary.mail_input_label
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	mail_input_label: prismic.KeyTextField;
 
 	/**
-	 * Message Input Label field in *ContactForm → Primary*
+	 * Message Input Label field in *ContactForm → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: contact_form.primary.message_input_label
+	 * - **API ID Path**: contact_form.default.primary.message_input_label
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	message_input_label: prismic.KeyTextField;
 
 	/**
-	 * Send Button Label field in *ContactForm → Primary*
+	 * Send Button Label field in *ContactForm → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: contact_form.primary.send_button_label
+	 * - **API ID Path**: contact_form.default.primary.send_button_label
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	send_button_label: prismic.KeyTextField;
 
 	/**
-	 * Success Message field in *ContactForm → Primary*
+	 * Success Message field in *ContactForm → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: contact_form.primary.success_message
+	 * - **API ID Path**: contact_form.default.primary.success_message
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	success_message: prismic.KeyTextField;
@@ -1007,25 +1007,25 @@ type ContactFormSliceVariation = ContactFormSliceDefault;
 export type ContactFormSlice = prismic.SharedSlice<'contact_form', ContactFormSliceVariation>;
 
 /**
- * Primary content in *ExpertiseCards → Primary*
+ * Primary content in *ExpertiseCards → Default → Primary*
  */
 export interface ExpertiseCardsSliceDefaultPrimary {
 	/**
-	 * Title field in *ExpertiseCards → Primary*
+	 * Title field in *ExpertiseCards → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: expertise_cards.primary.title
+	 * - **API ID Path**: expertise_cards.default.primary.title
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	title: prismic.KeyTextField;
 
 	/**
-	 * Url id field in *ExpertiseCards → Primary*
+	 * Url id field in *ExpertiseCards → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: expertise_cards.primary.url_id
+	 * - **API ID Path**: expertise_cards.default.primary.url_id
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	url_id: prismic.KeyTextField;
@@ -1107,45 +1107,45 @@ export type ExpertiseCardsSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *Hero → Primary*
+ * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
 	/**
-	 * Presentation field in *Hero → Primary*
+	 * Presentation field in *Hero → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: hero.primary.presentation
+	 * - **API ID Path**: hero.default.primary.presentation
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	presentation: prismic.KeyTextField;
 
 	/**
-	 * What I Do field in *Hero → Primary*
+	 * What I Do field in *Hero → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: hero.primary.what_i_do
+	 * - **API ID Path**: hero.default.primary.what_i_do
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	what_i_do: prismic.KeyTextField;
 
 	/**
-	 * CTA Label field in *Hero → Primary*
+	 * CTA Label field in *Hero → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: hero.primary.cta_label
+	 * - **API ID Path**: hero.default.primary.cta_label
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	cta_label: prismic.KeyTextField;
 
 	/**
-	 * CTA Link field in *Hero → Primary*
+	 * CTA Link field in *Hero → Default → Primary*
 	 *
 	 * - **Field Type**: Link
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: hero.primary.cta_link
+	 * - **API ID Path**: hero.default.primary.cta_link
 	 * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
 	 */
 	cta_link: prismic.LinkField;
@@ -1179,15 +1179,15 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<'hero', HeroSliceVariation>;
 
 /**
- * Primary content in *Meteo → Primary*
+ * Primary content in *Meteo → Default → Primary*
  */
 export interface MeteoSliceDefaultPrimary {
 	/**
-	 * Title field in *Meteo → Primary*
+	 * Title field in *Meteo → Default → Primary*
 	 *
 	 * - **Field Type**: Text
 	 * - **Placeholder**: *None*
-	 * - **API ID Path**: meteo.primary.title
+	 * - **API ID Path**: meteo.default.primary.title
 	 * - **Documentation**: https://prismic.io/docs/field#key-text
 	 */
 	title: prismic.KeyTextField;
@@ -1278,6 +1278,17 @@ declare module '@prismicio/client' {
 			repositoryNameOrEndpoint: string,
 			options?: prismic.ClientConfig
 		): prismic.Client<AllDocumentTypes>;
+	}
+
+	interface CreateWriteClient {
+		(
+			repositoryNameOrEndpoint: string,
+			options: prismic.WriteClientConfig
+		): prismic.WriteClient<AllDocumentTypes>;
+	}
+
+	interface CreateMigration {
+		(): prismic.Migration<AllDocumentTypes>;
 	}
 
 	namespace Content {
